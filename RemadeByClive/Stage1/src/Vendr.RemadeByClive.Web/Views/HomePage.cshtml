@@ -1,8 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
 	Layout = "Master.cshtml";
-
-	var productsNode = Model.Children.FirstOrDefault(x => x.ContentType.Alias == "productsPage");
 }
 
 @* Intro *@
@@ -14,7 +12,5 @@
 
 @* Products *@
 <section>
-	@if (productsNode != null) {
-		@Html.Partial("ProductList", productsNode.Children.Where(x => x.IsVisible()))
-    }
+	@Html.Partial("ProductList", Model.Value<IEnumerable<IPublishedContent>>("featuredProducts"))
 </section>
