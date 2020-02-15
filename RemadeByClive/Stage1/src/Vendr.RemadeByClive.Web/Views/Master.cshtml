@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = null;
+
+    var homePage = Model.AncestorOrSelf("homePage");
+
+    var metaTitle = Model.Id == homePage.Id
+        ? homePage.Value<string>("siteName") + " - " + homePage.Value<string>("siteDescription")
+        : Model.Value<string>("pageTitle", defaultValue: Model.Name) + " | " + homePage.Value<string>("siteName");
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@(metaTitle)</title>
+    <meta name="description" content="@(Model.Value<string>("metaDescription"))" />
+    <meta name="keywords" content="@(Model.Value<string>("metaKeywords"))" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:500|Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="/css/rbc.css" rel="stylesheet">
+    @RenderSection("head", false)
+</head>
+<body class="text-gray-800">
+    <div id="page" role="main" class="max-w-6xl mx-auto px-3">
+        <header class=" border-b border-gray-400 flex flex-col items-center py-6 sm:flex-row sm:justify-between sm:border-0">
+            <a href="/" class="hover:text-green-400">
+                <svg role="presentation" aria-hidden="true" class="w-20 h-20 fill-current">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/logo.svg#main"></use>
+                </svg>
+            </a>
+            <ul class="reset-list flex flex-col items-center mt-4 sm:flex-row sm:mt-0">
+                @foreach(var node in homePage.Children.Where(x => x.IsVisible()))
+                {
+                    <li class="mt-2 sm:mt-0 sm:ml-6"><a href="@node.Url" class="hover:text-green-400">@node.Name</a></li>
+                }
+                <li class="my-6 flex sm:my-0 sm:ml-6">
+                    <a href="#" class="bg-gray-800 text-sm text-white rounded-full flex items-center justify-center w-6 h-6 hover:bg-green-400"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="bg-gray-800 text-sm text-white rounded-full flex items-center justify-center w-6 h-6 hover:bg-green-400 ml-1"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="bg-gray-800 text-sm text-white rounded-full flex items-center justify-center w-6 h-6 hover:bg-green-400 ml-1"><i class="fa fa-twitter"></i></a>
+                </li>
+            </ul>
+        </header>
+
+        @RenderBody()
+
+        <footer class="pt-10 pb-6 flex items-center justify-center">
+            <div class="border-t border-gray-400 w-10 mr-8 sm:w-20"></div>
+            <a href="/" class="hover:text-green-400">
+                <svg role="presentation" aria-hidden="true" class="w-16 h-16 fill-current">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/logo.svg#main"></use>
+                </svg>
+            </a>
+            <div class="border-t border-gray-400 w-10 ml-8 sm:w-20"></div>
+        </footer>
+    </div>
+    <script src="https://instant.page/3.0.0" integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1" type="module" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplestatemanager/2.2.5/ssm.min.js" integrity="sha384-XnVIWbxzq0gb9RKt1v5zw74IEsfpPVIz723OMFYy3jodu41eRL54OyLzf5atZdu+" crossorigin="anonymous" defer></script>
+    <script src="/scripts/rbc.js"></script>
+    @RenderSection("foot", false)
+</body>
+</html>

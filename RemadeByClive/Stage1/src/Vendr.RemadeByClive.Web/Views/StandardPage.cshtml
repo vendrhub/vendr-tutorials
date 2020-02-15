@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = "Master.cshtml";
+}
+
+<section class="pt-10 pb-16 max-w-3xl sm:pt-20 sm:pb-24 md:pl-3">
+	<h1 class="font-zilla text-4xl lg:text-4xl lg:text-5xl leading-none text-green-400">@Model.Name</h1>
+	<div class="rte mt-3">
+		@(Model.Value<IHtmlString>("bodyText"))
+	</div>
+</section>

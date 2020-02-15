@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = "Master.cshtml";
+
+	var productsNode = Model.Children.FirstOrDefault(x => x.ContentType.Alias == "productsPage");
+}
+
+@* Intro *@
+<section class="pt-10 pb-16 max-w-3xl sm:pt-20 sm:pb-24 md:pl-3">
+	<h1 class="font-zilla text-4xl lg:text-5xl leading-none text-green-400">Hi,</h1>
+	<p class="lg:text-lg leading-relaxed text-gray-700 mt-3">@(Html.ReplaceLineBreaksForHtml(Model.Value<string>("intro", defaultValue: "")))</p>
+	<p class="mt-6"><img src="/images/signature.png" alt="" class="opacity-50" /></p>
+</section>
+
+@* Products *@
+<section>
+	@if (productsNode != null) {
+		@Html.Partial("ProductList", productsNode.Children.Where(x => x.IsVisible()))
+    }
+</section>

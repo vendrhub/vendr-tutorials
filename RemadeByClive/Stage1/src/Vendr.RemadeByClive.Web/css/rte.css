@@ -1,0 +1,23 @@
+
+
+/**umb_name:Heading*/
+h2 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/**umb_name:Sub Heading*/
+h3 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/**umb_name:Intro*/
+.intro {
+	color: #666;
+	font-size: 16px;
+}
+
+/**umb_name:Paragraph*/
+p {
+}

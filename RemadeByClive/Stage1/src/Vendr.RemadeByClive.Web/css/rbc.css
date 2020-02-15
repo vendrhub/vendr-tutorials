@@ -1,0 +1,141 @@
+﻿/* Fonts */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-zilla {
+    font-family: 'Zilla Slab', serif;
+}
+
+/* Rich Text Editor */
+
+.rte .intro {
+    color: #4a5568;
+    line-height: 1.625;
+}
+
+@media (min-width:1024px) {
+    .rte .intro {
+        font-size: 1.125rem;
+    }
+}
+
+.rte p,
+.rte ul,
+.rte ol,
+.rte h2,
+.rte h3 {
+    margin-bottom: .75rem;
+}
+
+.rte h2,
+.rte h3 {
+    font-family: 'Zilla Slab', serif;
+    font-weight: bold;
+}
+
+.rte h2 {
+    font-size: 2rem;
+}
+
+.rte h3 {
+    font-size: 1.5rem;
+}
+
+.rte ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.rte a {
+    color: #2d3748;
+    text-decoration: underline;
+}
+
+.rte a:hover,
+.rte a:focus {
+    color: #68d391;
+    text-decoration: underline;
+}
+
+
+
+/* Custom Utilities */
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.col-1 { column-count: 1; }
+.col-2 { column-count: 2; }
+.col-3 { column-count: 3; }
+.col-4 { column-count: 4; }
+
+.col-gap-0 { column-gap: 0; }
+.col-gap-1 { column-gap: 0.25rem; }
+.col-gap-2 { column-gap: 0.5rem; }
+.col-gap-3 { column-gap: 0.75rem; }
+.col-gap-4 { column-gap: 1rem; }
+.col-gap-5 { column-gap: 1.25rem; }
+.col-gap-6 { column-gap: 1.5rem; }
+
+@media (min-width:640px) {
+    .sm\:col-1 { column-count: 1; }
+    .sm\:col-2 { column-count: 2; }
+    .sm\:col-3 { column-count: 3; }
+    .sm\:col-4 { column-count: 4; }
+
+    .sm\:col-gap-0 { column-gap: 0; }
+    .sm\:col-gap-1 { column-gap: 0.25rem; }
+    .sm\:col-gap-2 { column-gap: 0.5rem; }
+    .sm\:col-gap-3 { column-gap: 0.75rem; }
+    .sm\:col-gap-4 { column-gap: 1rem; }
+    .sm\:col-gap-5 { column-gap: 1.25rem; }
+    .sm\:col-gap-6 { column-gap: 1.5rem; }
+}
+
+@media (min-width:768px) {
+    .md\:col-1 { column-count: 1; }
+    .md\:col-2 { column-count: 2; }
+    .md\:col-3 { column-count: 3; }
+    .md\:col-4 { column-count: 4; }
+
+    .md\:col-gap-0 { column-gap: 0; }
+    .md\:col-gap-1 { column-gap: 0.25rem; }
+    .md\:col-gap-2 { column-gap: 0.5rem; }
+    .md\:col-gap-3 { column-gap: 0.75rem; }
+    .md\:col-gap-4 { column-gap: 1rem; }
+    .md\:col-gap-5 { column-gap: 1.25rem; }
+    .md\:col-gap-6 { column-gap: 1.5rem; }
+}
+
+@media (min-width:1024px) {
+    .lg\:col-1 { column-count: 1; }
+    .lg\:col-2 { column-count: 2; }
+    .lg\:col-3 { column-count: 3; }
+    .lg\:col-4 { column-count: 4; }
+
+    .lg\:col-gap-0 { column-gap: 0; }
+    .lg\:col-gap-1 { column-gap: 0.25rem; }
+    .lg\:col-gap-2 { column-gap: 0.5rem; }
+    .lg\:col-gap-3 { column-gap: 0.75rem; }
+    .lg\:col-gap-4 { column-gap: 1rem; }
+    .lg\:col-gap-5 { column-gap: 1.25rem; }
+    .lg\:col-gap-6 { column-gap: 1.5rem; }
+}
+
+@media (min-width:1280px) {
+    .xl\:col-1 { column-count: 1; }
+    .xl\:col-2 { column-count: 2; }
+    .xl\:col-3 { column-count: 3; }
+    .xl\:col-4 { column-count: 4; }
+
+    .xl\:col-gap-0 { column-gap: 0; }
+    .xl\:col-gap-1 { column-gap: 0.25rem; }
+    .xl\:col-gap-2 { column-gap: 0.5rem; }
+    .xl\:col-gap-3 { column-gap: 0.75rem; }
+    .xl\:col-gap-4 { column-gap: 1rem; }
+    .xl\:col-gap-5 { column-gap: 1.25rem; }
+    .xl\:col-gap-6 { column-gap: 1.5rem; }
+}
