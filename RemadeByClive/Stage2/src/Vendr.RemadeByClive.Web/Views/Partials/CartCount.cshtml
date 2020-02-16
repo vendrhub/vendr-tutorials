@@ -1,0 +1,8 @@
+﻿@using Vendr.Core.Models;
+@using Vendr.Core.Web.Api;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{ 
+    var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+    var currentOrder = VendrApi.Instance.GetCurrentOrder(store.Id);
+}
+<a href="/cart" class="hover:text-green-400"><i class="fa fa-shopping-cart"></i> @(currentOrder != null ? currentOrder.TotalQuantity : 0)</a>

@@ -1,0 +1,15 @@
+﻿@using Vendr.Core;
+@using Vendr.Core.Web.Api;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var product = VendrApi.Instance.GetProduct(Model.Key.ToString());
+    var price = product.CalculatePrice();
+}
+
+@using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
+{
+    @Html.Hidden("productReference", Model.Key.ToString())
+
+    <p class="mt-3 text-xl text-green-400">@(price.Formatted())</p>
+    <button class="mt-3 font-bold border border-gray-900 px-6 py-3 mb-4 hover:bg-green-400 hover:border-green-400 hover:text-white" type="submit">Add to Cart</button>
+}

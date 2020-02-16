@@ -1,0 +1,17 @@
+﻿@using Vendr.Core;
+@using Vendr.Core.Web.Api;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var product = VendrApi.Instance.GetProduct(Model.Key.ToString());
+    var price = product.CalculatePrice();
+}
+<a href="@Model.Url" class="inline-block relative mb-3 group sm:mb-6">
+    <span class="absolute inset-0 opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
+        <span class="absolute inset-0 bg-gray-900 opacity-75"></span>
+        <span class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-white text-medium text-xl">@Model.Name</span>
+            <span class="text-white text-medium text-xl">@(price.Formatted())</span>
+        </span>
+    </span>
+    <img src="@(Model.Value<IPublishedContent>("image").Url)" />
+</a>

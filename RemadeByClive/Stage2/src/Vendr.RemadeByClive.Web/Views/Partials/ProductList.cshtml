@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedContent>>
+
+<div class="col-1 col-gap-6 sm:col-2 md:col-3">
+    @foreach (var node in Model)
+    {
+        @Html.Partial("ProductListItemWithPrice", node)
+    }
+</div>

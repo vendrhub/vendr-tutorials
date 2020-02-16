@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+@Html.ValidationSummary(true, "", new { @class = "notification bg-red-400" })
+
+@{
+    var sucessMessage = TempData["SucessMessage"];
+    if (sucessMessage != null)
+    {
+        <div class="notification bg-green-400">@sucessMessage</div>
+    }
+}
