@@ -12,7 +12,7 @@
 
     var canGoBack = (bool)ViewData["canGoBack"];
     var totalView = (string)ViewData["totalView"];
-    var finalized = (bool)ViewData["finalized"];
+    var finalized = (bool)(ViewData["finalized"] ?? false);
 
     var storeName = Model.Value<string>("vendrStoreName", fallback:Fallback.ToAncestors);
 
