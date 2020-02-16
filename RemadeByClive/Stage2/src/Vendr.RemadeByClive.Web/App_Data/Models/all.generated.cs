@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ae590a480f0a33a1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3cf083c189be1f34")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
@@ -485,13 +485,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		[ImplementPropertyType("vendrStoreLogo")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrStoreLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrStoreLogo");
-
-		///<summary>
-		/// Store Name: The name of the web store.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		[ImplementPropertyType("vendrStoreName")]
-		public string VendrStoreName => this.Value<string>("vendrStoreName");
 
 		///<summary>
 		/// Terms and Conditions Page: The page on the site containing the terms and conditions.

@@ -1,14 +1,6 @@
-﻿@using Vendr.Core;
-@using Vendr.Core.Web.Api;
-@using Vendr.Checkout.Web;
-@using Umbraco.Web;
-@using System.Web.Mvc.Html;
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "VendrCheckoutMaster.cshtml";
-
-    ViewData["canGoBack"] = true;
-    ViewData["totalView"] = "Subtotal";
 
     var store = Model.GetStore();
     var currentOrder = VendrApi.Instance.GetCurrentOrder(store.Id);
@@ -58,5 +50,5 @@
         }
     </ul>
 
-    @Html.Partial("/App_Plugins/VendrCheckout/Common/Views/Partials/VendrCheckoutPrevNext.cshtml")
+    @Html.VendrCheckoutPartial("VendrCheckoutPrevNext")
 }
