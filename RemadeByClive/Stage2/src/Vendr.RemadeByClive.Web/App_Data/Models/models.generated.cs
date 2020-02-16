@@ -17,7 +17,7 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ccb4c5a60b132261")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "dc2190c6fb3c15a1")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
@@ -309,6 +309,182 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+	}
+
+	/// <summary>[Vendr Checkout] Page</summary>
+	[PublishedModel("vendrCheckoutBasePage")]
+	public partial class VendrCheckoutBasePage : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const string ModelTypeAlias = "vendrCheckoutBasePage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<VendrCheckoutBasePage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public VendrCheckoutBasePage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Meta Description: Appears in Google search results. It should be descriptive and in complete sentences. Include value statements and a call-to-action (click here, learn more by clicking here, download here, view video, etc) so people click the link. Include relevant keywords. 50-155 characters.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription => this.Value<string>("metaDescription");
+
+		///<summary>
+		/// Meta Keywords: Used by smaller search engines but not Google, Bing or Yahoo. The meta keywords to display to search engines. List in order of relevance and importance. Separate words or phrases with a comma. Include misspellings and variations. Include action words such as buy, shop, find, download or words related to your industry.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("metaKeywords")]
+		public string MetaKeywords => this.Value<string>("metaKeywords");
+
+		///<summary>
+		/// Page Title: Overrides the default page title.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => this.Value<string>("pageTitle");
+	}
+
+	/// <summary>[Vendr Checkout] Checkout Step Page</summary>
+	[PublishedModel("vendrCheckoutCheckoutStepPage")]
+	public partial class VendrCheckoutCheckoutStepPage : VendrCheckoutBasePage
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const string ModelTypeAlias = "vendrCheckoutCheckoutStepPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<VendrCheckoutCheckoutStepPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public VendrCheckoutCheckoutStepPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Short Step Name: A short name for this step to display in the checkout navigation.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrShortStepName")]
+		public string VendrShortStepName => this.Value<string>("vendrShortStepName");
+
+		///<summary>
+		/// Step Type: The checkout step to display for this step of the checkout flow.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrStepType")]
+		public string VendrStepType => this.Value<string>("vendrStepType");
+	}
+
+	/// <summary>[Vendr Checkout] Checkout Page</summary>
+	[PublishedModel("vendrCheckoutCheckoutPage")]
+	public partial class VendrCheckoutCheckoutPage : VendrCheckoutBasePage
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const string ModelTypeAlias = "vendrCheckoutCheckoutPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<VendrCheckoutCheckoutPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public VendrCheckoutCheckoutPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Checkout Back Page: The page to go back to when backing out of the checkout flow.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrCheckoutBackPage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrCheckoutBackPage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrCheckoutBackPage");
+
+		///<summary>
+		/// Collect Shipping Details: Select whether to collect shipping details. Not necessary if you are only dealing with digital downloads.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrCollectShippingDetails")]
+		public bool VendrCollectShippingDetails => this.Value<bool>("vendrCollectShippingDetails");
+
+		///<summary>
+		/// Order Line Property Aliases: Comma separated list of order line property aliases to display in the order summary.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrOrderLinePropertyAliases")]
+		public string VendrOrderLinePropertyAliases => this.Value<string>("vendrOrderLinePropertyAliases");
+
+		///<summary>
+		/// Privacy Policy Page: The page on the site containing the privacy policy details.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrPrivacyPolicyPage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrPrivacyPolicyPage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrPrivacyPolicyPage");
+
+		///<summary>
+		/// Store Address: The address of the web store.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrStoreAddress")]
+		public string VendrStoreAddress => this.Value<string>("vendrStoreAddress");
+
+		///<summary>
+		/// Store Logo: A logo image for the store to appear at the top of the checkout screens and order emails.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrStoreLogo")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrStoreLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrStoreLogo");
+
+		///<summary>
+		/// Store Name: The name of the web store.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrStoreName")]
+		public string VendrStoreName => this.Value<string>("vendrStoreName");
+
+		///<summary>
+		/// Terms and Conditions Page: The page on the site containing the terms and conditions.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrTermsAndConditionsPage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrTermsAndConditionsPage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrTermsAndConditionsPage");
+
+		///<summary>
+		/// Theme Color: The theme color to use for colored elements of the checkout pages.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		[ImplementPropertyType("vendrThemeColor")]
+		public string VendrThemeColor => this.Value<string>("vendrThemeColor");
 	}
 
 	/// <summary>Folder</summary>

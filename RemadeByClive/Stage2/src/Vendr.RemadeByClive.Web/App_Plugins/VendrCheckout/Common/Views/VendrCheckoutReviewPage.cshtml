@@ -1,0 +1,48 @@
+﻿@using Vendr.Core.Web;
+@using Vendr.Core.Web.Api;
+@using Vendr.Checkout.Web;
+@using Umbraco.Web;
+@using System.Web.Mvc.Html;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = "VendrCheckoutMaster.cshtml";
+
+    ViewData["canGoBack"] = true;
+    ViewData["totalView"] = "Total";
+
+    var store = Model.GetStore();
+    var currentOrder = VendrApi.Instance.GetCurrentOrder(store.Id);
+
+    var backPage = Model.GetCheckoutBackPage();
+    var prevStepPage = Model.GetPreviousPage();
+    var nextStepPage = Model.GetNextPage();
+
+    var themeColor = Model.GetThemeColor();
+}
+
+@Html.Partial("/App_Plugins/VendrCheckout/Common/Views/Partials/VendrCheckoutOrderInfo.cshtml", currentOrder)
+
+@using (Html.BeginPaymentForm(currentOrder))
+{
+    <div class="border border-gray-300 rounded">
+        <label class="flex items-center py-4 px-4 cursor-pointer hover:bg-gray-100">
+            <input id="acceptTerms" type="checkbox" value="1" class="mr-3" />
+            <span class="font-medium">I agree and accept the sites terms of service</span>
+        </label>
+    </div>
+
+    <div class="flex flex-col-reverse items-center justify-between mt-8 md:flex-row">
+        @if (prevStepPage != null)
+        {
+            <div><a href="@(prevStepPage.Url)" class="text-@(themeColor) hover:text-gray-900 hover:underline"><i class="fa fa-angle-left"></i> Return to @(prevStepPage.Name)</a></div>
+        }
+        else
+        {
+            <div><a href="@(backPage.Url)" class="text-@(themeColor) hover:text-gray-900 hover:underline"><i class="fa fa-angle-left"></i> Return to @(backPage.Name)</a></div>
+        }
+        <div class="mb-4 w-full md:mb-0 md:w-auto text-center">
+            <div id="continue-disabled" class="bg-gray-200 text-white px-4 py-4 w-full rounded cursor-not-allowed">Continue to @(nextStepPage.Name)</div>
+            <button id="continue" class="bg-@(themeColor) text-white px-4 py-4 w-full rounded hover:bg-gray-900" type="submit" style="display: none;">Continue to @(nextStepPage.Name)</button>
+        </div>
+    </div>
+}
