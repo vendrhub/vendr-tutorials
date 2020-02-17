@@ -9,6 +9,10 @@
     var currentOrder = VendrApi.Instance.GetCurrentOrder(store.Id);
 }
 
+@section head {
+    <meta name="robots" content="noindex, nofollow" />
+}
+
 <section class="pt-10 pb-16 sm:pt-20 sm:pb-24 md:pl-3">
 
     <h1 class="font-zilla text-4xl lg:text-5xl leading-none text-green-400">@Model.Name</h1>
