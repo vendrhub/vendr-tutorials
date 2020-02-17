@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "58e85792f9380fdd")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a8b14a5aab32edb6")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -431,11 +431,11 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrCheckoutBackPage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrCheckoutBackPage");
 
 		///<summary>
-		/// Collect Shipping Details: Select whether to collect shipping details. Not necessary if you are only dealing with digital downloads.
+		/// Collect Shipping Info: Select whether to collect shipping information or not. Not necessary if you are only dealing with digital downloads.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		[ImplementPropertyType("vendrCollectShippingDetails")]
-		public bool VendrCollectShippingDetails => this.Value<bool>("vendrCollectShippingDetails");
+		[ImplementPropertyType("vendrCollectShippingInfo")]
+		public bool VendrCollectShippingInfo => this.Value<bool>("vendrCollectShippingInfo");
 
 		///<summary>
 		/// Order Line Property Aliases: Comma separated list of order line property aliases to display in the order summary.
