@@ -282,6 +282,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\VendrCheckout\BackOffice\views\dashboards\installer.controller.js" />
+    <Content Include="App_Plugins\VendrCheckout\BackOffice\views\dashboards\installer.html" />
+    <Content Include="App_Plugins\VendrCheckout\Config\vendrcheckout.order.editor.config.js" />
+    <Content Include="App_Plugins\VendrCheckout\Lang\en-US.xml" />
+    <Content Include="App_Plugins\VendrCheckout\Scripts\vendrcheckout.js" />
     <Content Include="App_Plugins\Vendr\assets\fonts\vendr.svg" />
     <Content Include="App_Plugins\Vendr\assets\images\vendr-bg.png" />
     <Content Include="App_Plugins\Vendr\assets\images\vendr-logo.png" />
@@ -423,6 +428,19 @@
     <Content Include="App_Plugins\Vendr\assets\fonts\vendr.woff" />
     <Content Include="App_Plugins\Vendr\assets\fonts\vendr.ttf" />
     <Content Include="App_Plugins\Vendr\assets\fonts\vendr.eot" />
+    <Content Include="App_Plugins\VendrCheckout\package.manifest" />
+    <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderConfirmationEmail.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderErrorEmail.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\Partials\VendrCheckoutOrderInfo.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\Partials\VendrCheckoutPrevNext.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutConfirmationPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutInformationPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutMaster.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutPaymentPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutReviewPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutShippingAndPaymentMethodPage.cshtml" />
+    <Content Include="App_Plugins\VendrCheckout\Views\Web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
