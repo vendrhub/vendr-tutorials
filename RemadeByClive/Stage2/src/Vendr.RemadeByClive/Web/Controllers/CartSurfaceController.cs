@@ -5,25 +5,18 @@ using Umbraco.Web.Mvc;
 using Vendr.Core;
 using Vendr.Core.Exceptions;
 using Vendr.Core.Models;
-using Vendr.Core.Services;
-using Vendr.Core.Session;
+using Vendr.Core.Web.Api;
 using Vendr.RemadeByClive.Web.Dtos;
 
 namespace Vendr.RemadeByClive.Web.Controllers
 {
     public class CartSurfaceController : SurfaceController
     {
-        private readonly ISessionManager _sessionManager;
-        private readonly IOrderService _orderService;
-        private readonly IUnitOfWorkProvider _uowProvider;
+        private readonly VendrContext _vendrContext;
 
-        public CartSurfaceController(ISessionManager sessionManager,
-            IOrderService orderService,
-            IUnitOfWorkProvider uowProvider)
+        public CartSurfaceController(VendrContext vendrContextr)
         {
-            _sessionManager = sessionManager;
-            _orderService = orderService;
-            _uowProvider = uowProvider;
+            _vendrContext = vendrContextr;
         }
 
         [HttpPost]
@@ -31,14 +24,14 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _uowProvider.Create())
+                using (var uow = _vendrContext.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _sessionManager.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow)
                         .AddProduct(postModel.ProductReference, 1);
 
-                    _orderService.SaveOrder(order);
+                    _vendrContext.Services.OrderService.SaveOrder(order);
 
                     uow.Complete();
                 }
@@ -60,10 +53,10 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _uowProvider.Create())
+                using (var uow = _vendrContext.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _sessionManager.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow);
 
                     foreach (var orderLine in postModel.OrderLines)
@@ -72,7 +65,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                             .SetQuantity(orderLine.Quantity);
                     }
 
-                    _orderService.SaveOrder(order);
+                    _vendrContext.Services.OrderService.SaveOrder(order);
 
                     uow.Complete();
                 }
@@ -94,14 +87,14 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _uowProvider.Create())
+                using (var uow = _vendrContext.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _sessionManager.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow)
                         .RemoveOrderLine(postModel.OrderLineId);
 
-                    _orderService.SaveOrder(order);
+                    _vendrContext.Services.OrderService.SaveOrder(order);
 
                     uow.Complete();
                 }
