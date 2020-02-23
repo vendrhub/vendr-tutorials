@@ -12,11 +12,11 @@ namespace Vendr.RemadeByClive.Web.Controllers
 {
     public class CartSurfaceController : SurfaceController
     {
-        private readonly VendrContext _vendrContext;
+        private readonly IVendrApi _vendrApi;
 
-        public CartSurfaceController(VendrContext vendrContextr)
+        public CartSurfaceController(IVendrApi vendrApi)
         {
-            _vendrContext = vendrContextr;
+            _vendrApi = vendrApi;
         }
 
         [HttpPost]
@@ -24,14 +24,14 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrContext.Uow.Create())
+                using (var uow = _vendrApi.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow)
                         .AddProduct(postModel.ProductReference, 1);
 
-                    _vendrContext.Services.OrderService.SaveOrder(order);
+                    _vendrApi.SaveOrder(order);
 
                     uow.Complete();
                 }
@@ -53,10 +53,10 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrContext.Uow.Create())
+                using (var uow = _vendrApi.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow);
 
                     foreach (var orderLine in postModel.OrderLines)
@@ -65,7 +65,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                             .SetQuantity(orderLine.Quantity);
                     }
 
-                    _vendrContext.Services.OrderService.SaveOrder(order);
+                    _vendrApi.SaveOrder(order);
 
                     uow.Complete();
                 }
@@ -87,14 +87,14 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrContext.Uow.Create())
+                using (var uow = _vendrApi.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _vendrContext.Session.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
                         .AsWritable(uow)
                         .RemoveOrderLine(postModel.OrderLineId);
 
-                    _vendrContext.Services.OrderService.SaveOrder(order);
+                    _vendrApi.SaveOrder(order);
 
                     uow.Complete();
                 }
