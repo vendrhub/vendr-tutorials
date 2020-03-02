@@ -56,7 +56,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                 using (var uow = _vendrApi.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrApi.GetCurrentOrder(store.Id)
                         .AsWritable(uow);
 
                     foreach (var orderLine in postModel.OrderLines)
@@ -90,7 +90,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                 using (var uow = _vendrApi.Uow.Create())
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-                    var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
+                    var order = _vendrApi.GetCurrentOrder(store.Id)
                         .AsWritable(uow)
                         .RemoveOrderLine(postModel.OrderLineId);
 
