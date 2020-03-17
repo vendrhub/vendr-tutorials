@@ -6,7 +6,7 @@
 
     var metaTitle = Model.Id == homePage.Id
         ? homePage.Value<string>("siteName") + " - " + homePage.Value<string>("siteDescription")
-        : Model.Value<string>("pageTitle", defaultValue: Model.Name) + " | " + homePage.Value<string>("siteName");
+        : Model.Name + " | " + homePage.Value<string>("siteName");
 }
 <html lang="en">
 <head>
