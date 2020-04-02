@@ -18,7 +18,7 @@
 {
     <input type="hidden" name="nextStep" value="@(nextStepPage?.Id)" />
 
-    @if (checkoutPage.Value<bool>("vendrCollectShippingInfo"))
+    if (checkoutPage.Value<bool>("vendrCollectShippingInfo"))
     {
         var shippingMethods = VendrApi.Instance.GetShippingMethods(store.Id);
 

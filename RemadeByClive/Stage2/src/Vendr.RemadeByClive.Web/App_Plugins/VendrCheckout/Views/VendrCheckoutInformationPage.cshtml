@@ -71,7 +71,7 @@
     <input name="billingAddress.Telephone" type="text" placeholder="Phone" class="block placeholder-gray-700 border border-gray-300 rounded py-2 px-4 mb-2 w-full"
            value="@(currentOrder.Properties["billingTelephone"])" />
 
-    @if (checkoutPage.Value<bool>("vendrCollectShippingInfo"))
+    if (checkoutPage.Value<bool>("vendrCollectShippingInfo"))
     {
         <label class="flex items-center mb-2 cursor-pointer">
             <input name="shippingSameAsBilling" type="checkbox" class="mr-2" value="true" @Html.Raw(currentOrder.Properties["shippingSameAsBilling"] == "1" || !currentOrder.Properties.ContainsKey("shippingSameAsBilling") ? "checked=\"checked\"" : "") /> Shipping address is same as billing address
