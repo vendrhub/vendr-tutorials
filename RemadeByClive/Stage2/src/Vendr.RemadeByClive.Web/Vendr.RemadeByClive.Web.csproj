@@ -1,5 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.props" Condition="Exists('..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.props')" />
+  <Import Project="..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.props" Condition="Exists('..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.props')" />
   <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -138,8 +138,8 @@
     <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
     </Reference>
-    <Reference Include="OD.Licensing, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OD.Licensing.0.1.0\lib\net45\OD.Licensing.dll</HintPath>
+    <Reference Include="OD.Licensing, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OD.Licensing.0.3.2\lib\net45\OD.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -249,31 +249,31 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\UmbracoCms.Core.8.5.3\lib\net472\Umbraco.Core.dll</HintPath>
+      <HintPath>..\..\packages\UmbracoCms.Core.8.5.5\lib\net472\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Examine.dll</HintPath>
+      <HintPath>..\..\packages\UmbracoCms.Web.8.5.5\lib\net472\Umbraco.Examine.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+      <HintPath>..\..\packages\UmbracoCms.Web.8.5.5\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Web.dll</HintPath>
+      <HintPath>..\..\packages\UmbracoCms.Web.8.5.5\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Web.UI.dll</HintPath>
+      <HintPath>..\..\packages\UmbracoCms.Web.8.5.5\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Vendr.Core, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Core.0.1.0-alpha0352\lib\net472\Vendr.Core.dll</HintPath>
+    <Reference Include="Vendr.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vendr.Core.1.0.0\lib\net472\Vendr.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Vendr.Core.Web, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Core.Web.0.1.0-alpha0352\lib\net472\Vendr.Core.Web.dll</HintPath>
+    <Reference Include="Vendr.Core.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vendr.Core.Web.1.0.0\lib\net472\Vendr.Core.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Vendr.PaymentProviders.Invoicing, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.PaymentProviders.Invoicing.0.1.0-alpha0018\lib\net472\Vendr.PaymentProviders.Invoicing.dll</HintPath>
+    <Reference Include="Vendr.PaymentProviders.Invoicing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vendr.PaymentProviders.Invoicing.1.0.0\lib\net472\Vendr.PaymentProviders.Invoicing.dll</HintPath>
     </Reference>
-    <Reference Include="Vendr.Web, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Web.0.1.0-alpha0352\lib\net472\Vendr.Web.dll</HintPath>
+    <Reference Include="Vendr.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vendr.Web.1.0.0\lib\net472\Vendr.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -416,18 +416,6 @@
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
-    <Content Include="config\umbracoSettings.config" />
-    <Content Include="config\tinyMceConfig.config" />
-    <Content Include="config\serilog.user.config" />
-    <Content Include="config\serilog.config" />
-    <Content Include="config\HealthChecks.config" />
-    <Content Include="config\ClientDependency.config" />
-    <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="App_Plugins\Vendr\package.manifest" />
-    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.woff2" />
-    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.woff" />
-    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.ttf" />
-    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.eot" />
     <Content Include="App_Plugins\VendrCheckout\package.manifest" />
     <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderConfirmationEmail.cshtml" />
     <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderErrorEmail.cshtml" />
@@ -441,16 +429,20 @@
     <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutReviewPage.cshtml" />
     <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutShippingAndPaymentMethodPage.cshtml" />
     <Content Include="App_Plugins\VendrCheckout\Views\Web.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\serilog.user.config" />
+    <Content Include="config\serilog.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="App_Plugins\Vendr\package.manifest" />
+    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.woff2" />
+    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.woff" />
+    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.ttf" />
+    <Content Include="App_Plugins\Vendr\assets\fonts\vendr.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\ProductPage.cshtml" />
@@ -463,6 +455,14 @@
     <Content Include="Views\Partials\Notifications.cshtml" />
     <Content Include="Views\Partials\ProductListItemWithPrice.cshtml" />
     <Content Include="Views\Partials\ProductAddToCartForm.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -507,11 +507,11 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
-    <Error Condition="!Exists('..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.props'))" />
-    <Error Condition="!Exists('..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
-  <Import Project="..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets" Condition="Exists('..\..\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets')" />
+  <Import Project="..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.targets" Condition="Exists('..\..\packages\UmbracoCms.8.5.5\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

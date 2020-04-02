@@ -2987,7 +2987,7 @@
                         if (!vm.content.prices)
                             vm.content.prices = [];
                         var idx = vm.content.prices.findIndex(findFunc);
-                        if (value) {
+                        if (value !== "" && !isNaN(value)) {
                             if (idx === -1) {
                                 vm.content.prices.push({
                                     currencyId: defaultPrice.currencyId,
@@ -3668,7 +3668,7 @@
                     var value = {};
 
                     vm.prices.forEach(function (price) {
-                        if (!isNaN(price.value) && price.value !== 0) {
+                        if (price.value !== "" && !isNaN(price.value)) {
                             value[price.currencyId] = price.value;
                         }
                     });
@@ -4394,7 +4394,7 @@
                         if (!vm.content.prices)
                             vm.content.prices = [];
                         var idx = vm.content.prices.findIndex(findFun);
-                        if (value) {
+                        if (value !== "" && !isNaN(value)) {
                             if (idx === -1) {
                                 vm.content.prices.push({
                                     currencyId: defaultPrice.currencyId,
