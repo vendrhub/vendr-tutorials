@@ -7,7 +7,7 @@
     var countries = VendrApi.Instance.GetCountries(store.Id);
 
     var checkoutPage = Model.GetCheckoutPage();
-    var nextStepPage = Model.GetNextPage();
+    var nextStepPage = Model.GetNextStepPage();
     var themeColor = Model.GetThemeColor();
 }
 
@@ -15,16 +15,22 @@
     <div class="pb-4 mb-4 border-b border-gray-300 ">
         @using (Html.BeginUmbracoForm("ApplyDiscountOrGiftCardCode", "VendrCheckoutSurface", null, new { @class = "flex w-full m-0" }))
         {
+            @Html.AntiForgeryToken();
+
             <input type="text" name="code" placeholder="Discount / Gift Card Code" class="flex-1 py-2 px-4 border rounded placeholder-gray-700" />
             <button class="ml-4 bg-@(themeColor) text-white px-4 rounded hover:bg-gray-900" type="submit">Apply</button>
         }
 
-        @if (currentOrder.DiscountCodes.Count > 0)
+        @if (currentOrder.DiscountCodes.Count > 0 || currentOrder.GiftCards.Count > 0)
         {
             <ul class="mt-4 block">
                 @foreach (var discountCode in currentOrder.DiscountCodes)
                 {
                     <li class="inline-block mr-2"><a href="@Url.SurfaceAction("RemoveDiscountOrGiftCardCode",  "VendrCheckoutSurface", new { Code = discountCode.Code })" class="inline-block bg-gray-300 px-2 rounded hover:bg-gray-900 hover:text-white"><i class="fa fa-times mr-1"></i> @discountCode.Code</a></li>
+                }
+                @foreach (var giftCard in currentOrder.GiftCards)
+                {
+                    <li class="inline-block mr-2"><a href="@Url.SurfaceAction("RemoveDiscountOrGiftCardCode",  "VendrCheckoutSurface", new { Code = giftCard.Code })" class="inline-block bg-gray-300 px-2 rounded hover:bg-gray-900 hover:text-white"><i class="fa fa-times mr-1"></i> @giftCard.Code</a></li>
                 }
             </ul>
         }
@@ -33,6 +39,8 @@
 
 @using (Html.BeginUmbracoForm("UpdateOrderInformation", "VendrCheckoutSurface"))
 {
+    @Html.AntiForgeryToken();
+
     <input type="hidden" name="nextStep" value="@(nextStepPage?.Id)" />
 
     <h3 class="text-xl font-medium mb-4">Contact Information</h3>

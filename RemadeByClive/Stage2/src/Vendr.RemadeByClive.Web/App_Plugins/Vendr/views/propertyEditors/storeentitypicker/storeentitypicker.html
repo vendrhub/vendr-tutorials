@@ -1,4 +1,4 @@
-﻿<div ng-controller="Vendr.Controllers.PaymentMethodPickerController as vm" class="vendr umb-property-editor">
+﻿<div ng-controller="Vendr.Controllers.StoreEntityPickerController as vm" class="vendr umb-property-editor">
 
     <ng-include ng-if="!vm.loading && !vm.store" src="'/app_plugins/vendr/views/common/nostorefound.html'" />
 
@@ -10,7 +10,7 @@
 
             <umb-node-preview ng-if="vm.pickedItem"
                 icon="vm.pickedItem.icon"
-                name="vm.pickedItem.name"
+                name="(vm.showStoreInName ? vm.store.name +' : ' : '') + vm.pickedItem.name"
                 published="true"
                 description="vm.pickedItem.id"
                 sortable="false"
@@ -20,14 +20,14 @@
                 on-open="vm.openItem()">
             </umb-node-preview>
 
-            <a ng-show="!vm.pickedItem" href="#"
+            <button type="button" ng-show="!vm.pickedItem" 
                class="umb-node-preview-add"
                ng-click="vm.openPicker()"
                id="{{vm.pickedItem.alias}}"
                aria-label="Add item" prevent-default>
                 <localize key="general_add">Add</localize>
                 <span class="sr-only">...</span>
-            </a>
+            </button>
 
         </ng-form>
 

@@ -342,13 +342,26 @@
 
         return {
 
-            sendEmail: function (emailTemlateId, orderId) {
+            sendOrderEmail: function (emailTemlateId, orderId, to, languageIsoCode) {
                 return umbRequestHelper.resourcePromise(
-                    $http.post(vendrRequestHelper.getApiUrl("emailApiBaseUrl", "SendEmail"), { 
+                    $http.post(vendrRequestHelper.getApiUrl("emailApiBaseUrl", "SendOrderEmail"), { 
                         emailTemlateId: emailTemlateId,
-                        orderId: orderId
+                        orderId: orderId,
+                        to: to,
+                        languageIsoCode: languageIsoCode
                     }),
-                    "Failed to send email");
+                    "Failed to send order email");
+            },
+
+            sendGiftCardEmail: function (emailTemlateId, giftCardId, to, languageIsoCode) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("emailApiBaseUrl", "SendGiftCardEmail"), {
+                        emailTemlateId: emailTemlateId,
+                        giftCardId: giftCardId,
+                        to: to,
+                        languageIsoCode: languageIsoCode
+                    }),
+                    "Failed to send gift card email");
             }
 
         };
@@ -366,10 +379,11 @@
 
         return {
 
-            getEmailTemplates: function (storeId) {
+            getEmailTemplates: function (storeId, category) {
                 return umbRequestHelper.resourcePromise(
                     $http.get(vendrRequestHelper.getApiUrl("emailTemplateApiBaseUrl", "GetEmailTemplates", { 
-                        storeId: storeId 
+                        storeId: storeId,
+                        category: category
                     })),
                     "Failed to get email templates");
             },
@@ -419,6 +433,15 @@
 
         return {
 
+            getStoreByEntityId: function (entityType, entityId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("entityApiBaseUrl", "GetStoreByEntityId", {
+                        entityType: entityType,
+                        entityId: entityId
+                    })),
+                    "Failed to get basic store by entity id");
+            },
+
             getEntity: function (entityType, entityId) {
                 return umbRequestHelper.resourcePromise(
                     $http.get(vendrRequestHelper.getApiUrl("entityApiBaseUrl", "GetEntity", {
@@ -457,7 +480,7 @@
                         storeId: storeId,
                         parentId: parentId
                     }),
-                    "Failed to delete entity");
+                    "Failed to sort entities");
             }
 
         };
@@ -465,6 +488,75 @@
     };
 
     angular.module('vendr.resources').factory('vendrEntityResource', vendrEntityResource);
+
+}());
+(function () {
+
+    'use strict';
+
+    function vendrGiftCardResource($http, umbRequestHelper, vendrRequestHelper) {
+
+        return {
+
+            searchGiftCards: function (storeId, opts) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "SearchGiftCards", angular.extend({}, {
+                        storeId: storeId
+                    }, opts))),
+                    "Failed to search gift cards");
+            },
+
+            generateGiftCardCode: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "GenerateGiftCardCode", {
+                        storeId: storeId
+                    })),
+                    "Failed to generate gift card code");
+            },
+
+            getGiftCards: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "GetGiftCards", { 
+                        storeId: storeId 
+                    })),
+                    "Failed to get gift cards");
+            },
+
+            getGiftCard: function (giftCardId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "GetGiftCard", { 
+                        giftCardId: giftCardId
+                    })),
+                    "Failed to get gift card");
+            },
+
+            createGiftCard: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "CreateGiftCard", {
+                        storeId: storeId
+                    })),
+                    "Failed to create gift card");
+            },
+
+            saveGiftCard: function (giftCard) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "SaveGiftCard"), giftCard),
+                    "Failed to save gift card");
+            },
+
+            deleteGiftCard: function (giftCardId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.delete(vendrRequestHelper.getApiUrl("giftCardApiBaseUrl", "DeleteGiftCard", {
+                        giftCardId: giftCardId
+                    })),
+                    "Failed to delete gift card");
+            }
+
+        };
+
+    };
+
+    angular.module('vendr.resources').factory('vendrGiftCardResource', vendrGiftCardResource);
 
 }());
 (function () {
@@ -491,6 +583,15 @@
                     "Failed to get order");
             },
 
+            getOrderEmailConfig: function (orderId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "GetOrderEmailConfig", {
+                        orderId: orderId
+                    })),
+                    "Failed to get order email config");
+            },
+
+
             getOrderTransactionInfo: function (orderId) {
                 return umbRequestHelper.resourcePromise(
                     $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "GetOrderTransactionInfo", {
@@ -506,6 +607,14 @@
                         orderStatusId: orderStatusId
                     })),
                     "Failed to change order status");
+            },
+
+            syncPaymentStatus: function (orderId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "SyncPaymentStatus", {
+                        orderId: orderId
+                    })),
+                    "Failed to sync payment");
             },
 
             cancelPayment: function(orderId) {
@@ -882,5 +991,28 @@
     }
 
     angular.module('vendr.resources').factory('vendrTaxResource', vendrTaxResource);
+
+}());
+(function () {
+
+    'use strict';
+
+    function vendrUtilsResource($http, umbRequestHelper, vendrRequestHelper) {
+
+        return {
+
+            getEnumOptions: function (type) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("utilsApiBaseUrl", "GetEnumOptions", { 
+                        type: type
+                    })),
+                    "Failed to get enum options");
+            }
+
+        };
+
+    };
+
+    angular.module('vendr.resources').factory('vendrUtilsResource', vendrUtilsResource);
 
 }());

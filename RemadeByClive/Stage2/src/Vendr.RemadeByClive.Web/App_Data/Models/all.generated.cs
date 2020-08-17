@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a8b14a5a9f6fe482")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f15352e71a80d7c6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -417,7 +417,7 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Hide from Navigation: Hide checkout page from the sites main navigation.
+		/// Hide from Navigation: Hide the checkout page from the sites main navigation.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.5")]
 		[ImplementPropertyType("umbracoNaviHide")]
@@ -445,14 +445,14 @@ namespace Umbraco.Web.PublishedModels
 		public string VendrOrderLinePropertyAliases => this.Value<string>("vendrOrderLinePropertyAliases");
 
 		///<summary>
-		/// Privacy Policy Page: The page on the site containing the privacy policy details.
+		/// Privacy Policy Page: The page on the site containing the privacy policy.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.5")]
 		[ImplementPropertyType("vendrPrivacyPolicyPage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent VendrPrivacyPolicyPage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("vendrPrivacyPolicyPage");
 
 		///<summary>
-		/// Store Address: The address of the web store.
+		/// Store Address: The address of the web store to appear in the footer of order emails.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.5")]
 		[ImplementPropertyType("vendrStoreAddress")]

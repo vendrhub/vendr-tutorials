@@ -17,15 +17,34 @@
     content: "\e900";
 }
 
-.icon-vendr-gift-card-1:before {
+/*.icon-vendr-gift-card-1:before {
     content: "\e901";
-}
+}*/
 
-.icon-vendr-gift-card-2:before {
+.icon-vendr-gift-card:before {
     content: "\e902";
 }
 
+.vendr-progress-bar {
+    background-color: #e9e9eb;
+    display: block;
+    border-radius: 100px;
+    height: 2px;
+}
+
+.vendr-progress-bar__bar {
+    background-color: #4caf50;
+    display: block;
+    border-radius: 100px;
+    height: 2px;
+}
+
 /* Overrides */
+.vendr .umb-table-cell > span {
+    display: block;
+    width: 100%;
+}
+
 .umb-tree-item.unselectable > .umb-tree-item__inner {
     background-color: transparent !important;
 }
@@ -226,6 +245,7 @@ div [ng-controller*=MemberGroupPickerController] .umb-box-content > .umb-tree {
 
 .vendr-input > .vendr-input--action .icon {
     font-size: 20px;
+    vertical-align: middle;
 }
 
 .vendr-input--right > input {
@@ -275,9 +295,37 @@ div [ng-controller*=MemberGroupPickerController] .umb-box-content > .umb-tree {
     margin-left: 0;
 }
 
+/* Horizontal Form */
+.form-horizontal .umb-property:last-of-type .control-group .umb-property:not(:last-of-type) .control-group {
+    margin-bottom: 20px !important;
+}
+
+.umb-property:last-of-type .umb-control-group .umb-property .umb-control-group {
+    border-bottom: 1px solid #f6f6f7;
+    padding-bottom: 20px;
+}
+
+.umb-property:last-of-type .umb-control-group .umb-property:last-of-type .umb-control-group {
+    border: none;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+}
+
+
 /* Toggle */
 .vendr-toggle--indented {
     margin-left: 40px;
+}
+
+.vendr-toggle.vendr-toggle--center {
+    display: block;
+}
+
+.vendr-toggle.vendr-toggle--center > .umb-toggle {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .vendr-toggle {
@@ -430,21 +478,18 @@ a.no-underline:focus {
 .vendr-badge--canceled,
 .vendr-badge--cancelled,
 .vendr-badge--inconsistentcanceled,
-.vendr-badge--pendingexternalsystem,
 .vendr-header--payment-status-initialized .umb-panel-header-name:after,
 .vendr-header--payment-status-canceled .umb-panel-header-name:after,
 .vendr-header--payment-status-cancelled .umb-panel-header-name:after,
 .vendr-header--payment-status-inconsistentcanceled .umb-panel-header-name:after,
-.vendr-header--payment-status-pendingexternalsystem .umb-panel-header-name:after,
 .vendr-header--order-status-grey .umb-panel-header-name:before {
     color: #68676b;
     background-color: #d8d7d9;
 }
+
 .vendr-bg--red,
-.vendr-badge--refunded,
 .vendr-badge--inconsistentcaptured,
 .vendr-badge--error,
-.vendr-header--payment-status-refunded .umb-panel-header-name:after,
 .vendr-header--payment-status-inconsistentcaptured .umb-panel-header-name:after,
 .vendr-header--payment-status-error .umb-panel-header-name:after,
 .vendr-header--order-status-red .umb-panel-header-name:before {
@@ -452,10 +497,8 @@ a.no-underline:focus {
     background-color: #d42054;
 }
 .vendr-bg--orange,
-.vendr-badge--authorized,
-.vendr-badge--inconsistentauthorized,
-.vendr-header--payment-status-authorized .umb-panel-header-name:after,
-.vendr-header--payment-status-inconsistentauthorized .umb-panel-header-name:after,
+.vendr-badge--refunded,
+.vendr-header--payment-status-refunded .umb-panel-header-name:after,
 .vendr-header--order-status-orange .umb-panel-header-name:before {
     color: white;
     background-color: #ff9800;
@@ -498,6 +541,10 @@ a.no-underline:focus {
     background-color: #2196f3;
 }
 .vendr-bg--light-blue,
+.vendr-badge--authorized,
+.vendr-badge--inconsistentauthorized,
+.vendr-header--payment-status-authorized .umb-panel-header-name:after,
+.vendr-header--payment-status-inconsistentauthorized .umb-panel-header-name:after,
 .vendr-header--order-status-light-blue .umb-panel-header-name:before {
     color: white;
     background-color: #03a9f4;
@@ -518,6 +565,8 @@ a.no-underline:focus {
     background-color: #9c27b0;
 }
 .vendr-bg--deep-purple,
+.vendr-badge--pendingexternalsystem,
+.vendr-header--payment-status-pendingexternalsystem .umb-panel-header-name:after,
 .vendr-header--order-status-deep-purble .umb-panel-header-name:before {
     color: white;
     background-color: #673ab7;
@@ -792,6 +841,11 @@ a.no-underline:focus {
     padding-top: 10px;
 }
 
+.vendr-multi-field-table__divide-right {
+    border-right: solid 1px #e9e9eb;
+    padding-right: 10px;
+}
+
 /* Rule / Reward Builder */
 .vendr-rule-builder,
 .vendr-reward-builder {
@@ -907,6 +961,10 @@ a.no-underline:focus {
 
 .vendr .-mb-10 {
     margin-bottom: -10px;
+}
+
+.vendr .mt-5 {
+    margin-top: 5px;
 }
 
 .vendr .mt-10 {
