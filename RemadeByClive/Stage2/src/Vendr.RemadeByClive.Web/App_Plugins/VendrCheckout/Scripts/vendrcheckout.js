@@ -24,6 +24,14 @@
     }
 
     function initCommon() {
+        $("select[name='billingAddress.Country']").on("change", function () {
+            showRegions("billing", $(this).children("option:selected").data("regions"));
+        }).triggerHandler("change");
+
+        $("select[name='shippingAddress.Country']").on("change", function () {
+            showRegions("shipping", $(this).children("option:selected").data("regions"));
+        }).triggerHandler("change");
+
         $("input[name=shippingSameAsBilling]").on("click", function () {
             showHideShippingInfo(true);
         });
@@ -73,6 +81,38 @@
             $("#shipping-info").show();
         }
     }
+
+    function showRegions(addressType, regions) {
+
+        var sl = $("select[name='" + addressType + "Address.Region']");
+        var slVal = sl.data("value");
+
+        sl.empty();
+
+        var containsValue = false;
+
+        regions.forEach(function (itm, idx) {
+            sl.append($('<option>', {
+                value: itm.id,
+                text: itm.name
+            }));
+            if (slVal && itm.id === slVal)
+                containsValue = true;
+        });
+
+        if (containsValue) {
+            sl.val(slVal);
+        }
+
+        if (regions.length > 0) {
+            sl.removeClass("hidden")
+                .addClass("block");
+        } else {
+            sl.removeClass("block")
+                .addClass("hidden");
+        }
+
+    };
 
     function enableDisableContinueButton() {
 
