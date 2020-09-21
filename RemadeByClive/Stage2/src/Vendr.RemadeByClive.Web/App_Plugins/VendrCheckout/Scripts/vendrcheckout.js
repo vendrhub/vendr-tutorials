@@ -24,14 +24,18 @@
     }
 
     function initCommon() {
+
+        // Display billing address regions if any
         $("select[name='billingAddress.Country']").on("change", function () {
             showRegions("billing", $(this).children("option:selected").data("regions"));
         }).triggerHandler("change");
 
+        // Display shipping address regions if any
         $("select[name='shippingAddress.Country']").on("change", function () {
             showRegions("shipping", $(this).children("option:selected").data("regions"));
         }).triggerHandler("change");
 
+        // Toggle shipping address display
         $("input[name=shippingSameAsBilling]").on("click", function () {
             showHideShippingInfo(true);
         });

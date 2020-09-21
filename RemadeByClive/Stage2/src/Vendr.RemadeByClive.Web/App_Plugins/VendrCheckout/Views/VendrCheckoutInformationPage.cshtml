@@ -73,7 +73,7 @@
             {
                 <option value="@(country.Id)" @Html.Raw(currentOrder.PaymentInfo.CountryId == country.Id ? "selected=\"selected\"" : "")
                         data-regions="@(JsonConvert.SerializeObject(VendrApi.Instance.GetRegions(country.StoreId, country.Id).Select(x => new {
-                            id = x.Id, 
+                            id = x.Id,
                             name = x.Name
                         })))">
                     @(country.Name)

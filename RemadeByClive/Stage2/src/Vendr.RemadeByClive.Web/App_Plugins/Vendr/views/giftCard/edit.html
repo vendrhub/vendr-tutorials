@@ -21,7 +21,8 @@
             </umb-editor-header>
 
             <umb-editor-container class="form-horizontal">
-                <vendr-license-check />
+
+                <vendr-license-check></vendr-license-check>
 
                 <div class="vendr-layout vendr-layout--layout1">
 
@@ -35,7 +36,7 @@
                                     <div class="vendr-input" style="position: relative">
                                         <input type="text" class="umb-property-editor umb-textstring textstring"
                                                ng-model="vm.content.code" />
-                                        <button type="button" ng-click="vm.generateCode()" class="btn-link vendr-input--action"><i class="icon icon-flash"></i></button>
+                                        <button type="button" ng-click="vm.generateCode()" class="btn-link vendr-input--action"><i class="icon icon-flash" aria-hidden="true"></i></button>
                                     </div>
                                 </umb-control-group>
 
@@ -73,9 +74,9 @@
                                                                   on-setup="vm.expiryDatePickerSetup(fpItem)"
                                                                   on-change="vm.expiryDatePickerChange(dateStr, instance)">
                                             </umb-date-time-picker>
-                                            <a ng-show="vm.content.expiryDate" ng-click="vm.clearExpiryDate()" class="btn umb-button--xs dropdown-toggle umb-button-group__toggle vendr-btn--clear">
-                                                <span class="icon icon-wrong"></span>
-                                            </a>
+                                            <button ng-show="vm.content.expiryDate" ng-click="vm.clearExpiryDate()" class="btn umb-button--xs dropdown-toggle umb-button-group__toggle vendr-btn--clear">
+                                                <i class="icon icon-wrong"></i>
+                                            </button>
                                         </div>
 
                                     </div>
@@ -84,7 +85,7 @@
 
                                 <umb-control-group label="Active" description="Activate / deactivate this gift card">
                                     <umb-toggle checked="vm.content.isActive"
-                                                on-click="vm.content.isActive = !vm.content.isActive" />
+                                                on-click="vm.content.isActive = !vm.content.isActive"></umb-toggle>
                                 </umb-control-group>
 
                             </umb-box-content>
@@ -96,7 +97,7 @@
                         <umb-box ng-if="!vm.create">
                             <umb-box-header title="Actions"></umb-box-header>
                             <umb-box-content class="block-form">
-                                <button type="button" class="btn btn-block btn-action" ng-click="vm.sendEmail()" prevent-default>Send Email</button>
+                                <button type="button" class="btn btn-block btn-action" ng-click="vm.sendEmail()">Send Email</button>
                             </umb-box-content>
                         </umb-box>
 
@@ -104,16 +105,16 @@
                             <umb-box-header title-key="general_info"></umb-box-header>
                             <umb-box-content class="block-form">
                                 <umb-control-group label="Id">
-                                    <vendr-id-label value="vm.content.id" />
+                                    <vendr-id-label value="vm.content.id"></vendr-id-label>
                                 </umb-control-group>
                                 <umb-control-group label="Store Id">
-                                    <vendr-id-label value="vm.content.storeId" />
+                                    <vendr-id-label value="vm.content.storeId"></vendr-id-label>
                                 </umb-control-group>
                                 <umb-control-group label="Order Id" ng-if="vm.content.orderId">
-                                    <vendr-id-label value="vm.content.orderId" />
+                                    <vendr-id-label value="vm.content.orderId"></vendr-id-label>
                                 </umb-control-group>
                                 <umb-control-group label="Order Number" ng-if="vm.content.orderNumber">
-                                    <vendr-id-label value="'#' + vm.content.orderNumber" />
+                                    <vendr-id-label value="'#' + vm.content.orderNumber"></vendr-id-label>
                                 </umb-control-group>
                             </umb-box-content>
                         </umb-box>

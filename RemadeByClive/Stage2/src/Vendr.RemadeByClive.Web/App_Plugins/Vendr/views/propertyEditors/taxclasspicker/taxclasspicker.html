@@ -1,6 +1,6 @@
 ﻿<div ng-controller="Vendr.Controllers.TaxClassPickerController as vm" class="vendr umb-property-editor">
 
-    <ng-include ng-if="!vm.loading && !vm.store" src="'/app_plugins/vendr/views/common/nostorefound.html'" />
+    <ng-include ng-if="!vm.loading && !vm.store" src="'/app_plugins/vendr/views/common/nostorefound.html'"></ng-include>
 
     <div ng-if="!vm.loading && vm.store" class="umb-contentpicker">
 
@@ -24,7 +24,7 @@
                class="umb-node-preview-add"
                ng-click="vm.openPicker()"
                id="{{vm.pickedItem.alias}}"
-               aria-label="Add item" prevent-default>
+               aria-label="Add item">
                 <localize key="general_add">Add</localize>
                 <span class="sr-only">...</span>
             </button>
