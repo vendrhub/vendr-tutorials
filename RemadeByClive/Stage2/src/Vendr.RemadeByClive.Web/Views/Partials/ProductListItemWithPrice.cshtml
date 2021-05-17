@@ -2,7 +2,7 @@
 @using Vendr.Core.Web.Api;
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    var product = VendrApi.Instance.GetProduct(Model.Key.ToString());
+    var product = VendrApi.Instance.GetProduct(Model.Key.ToString(), Culture);
     var price = product.CalculatePrice();
 }
 <a href="@Model.Url" class="inline-block relative mb-3 group sm:mb-6">
