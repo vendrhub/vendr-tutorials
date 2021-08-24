@@ -2,11 +2,11 @@
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
-using Vendr.Core;
-using Vendr.Core.Exceptions;
+using Vendr.Extensions;
 using Vendr.Core.Models;
-using Vendr.Core.Web.Api;
+using Vendr.Core.Api;
 using Vendr.RemadeByClive.Web.Dtos;
+using Vendr.Common.Validation;
 
 namespace Vendr.RemadeByClive.Web.Controllers
 {

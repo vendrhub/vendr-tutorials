@@ -1,5 +1,5 @@
 ﻿@using Vendr.Core.Models;
-@using Vendr.Core.Web.Api;
+@using Vendr.Core.Api;
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{ 
     var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
