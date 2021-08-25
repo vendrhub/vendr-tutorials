@@ -198,3 +198,4 @@ Desktop.ini
 **/umbraco/Data/TEMP/
 **/umbraco/Data/cache/
 **/umbraco/Logs/
+**/umbraco/MediaCache/
