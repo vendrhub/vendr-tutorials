@@ -1,5 +1,3 @@
-@using Vendr.Checkout;
-@using Umbraco.Web.Composing;
 @inherits VendrRazorTemplateView<OrderReadOnly>
 @{
     // Get order entities
@@ -25,14 +23,14 @@
 
     // Lookup the vendr checkout page for the associated orders store
     // so that we can extract relevant settings to configure the email template
-    var contentCache = this.GetService<IPublishedContentCache>();
-    var checkoutContentType = contentCache.GetContentType("vendrCheckoutCheckoutPage");
-    var checkoutPages = contentCache.GetByContentType(checkoutContentType);
+    var ctx = this.GetService<IUmbracoContextAccessor>().GetRequiredUmbracoContext();
+    var checkoutContentType = ctx.Content.GetContentType("vendrCheckoutCheckoutPage");
+    var checkoutPages = ctx.Content.GetByContentType(checkoutContentType);
     var checkoutPage = checkoutPages.First(x => x.GetStore()?.Id == Model.StoreId);
 
-    var vendrStoreLogoUrl = checkoutPage.Value<IPublishedContent>("vendrStoreLogo")?.Url;
-    var vendrStoreTsAndCsUrl = checkoutPage.Value<IPublishedContent>("vendrTermsAndConditionsPage")?.Url;
-    var vendrStorePrivacyPolicyUrl = checkoutPage.Value<IPublishedContent>("vendrPrivacyPolicyPage")?.Url;
+    var vendrStoreLogoUrl = checkoutPage.Value<IPublishedContent>("vendrStoreLogo")?.Url();
+    var vendrStoreTsAndCsUrl = checkoutPage.Value<IPublishedContent>("vendrTermsAndConditionsPage")?.Url();
+    var vendrStorePrivacyPolicyUrl = checkoutPage.Value<IPublishedContent>("vendrPrivacyPolicyPage")?.Url();
     var vendrStoreAddress = checkoutPage.Value<string>("vendrStoreAddress");
     var vendrThemeColor = checkoutPage.Value<string>("vendrThemeColor", defaultValue: "000000");
 }
