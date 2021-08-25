@@ -192,26 +192,6 @@
     <key alias="smallCustom">Custom</key>
     <key alias="historyIncludingVariants">History (all variants)</key>
   </area>
-  <area alias="changeDocType">
-    <key alias="changeDocTypeInstruction">To change the Document Type for the selected content, first select from the list of valid types for this location.</key>
-    <key alias="changeDocTypeInstruction2">Then confirm and/or amend the mapping of properties from the current type to the new, and click Save.</key>
-    <key alias="contentRepublished">The content has been re-published.</key>
-    <key alias="currentProperty">Current Property</key>
-    <key alias="currentType">Current type</key>
-    <key alias="docTypeCannotBeChanged">The Document Type cannot be changed, as there are no alternatives valid for this location.  An alternative will be valid if it is allowed under the parent of the selected content item and that all existing child content items are allowed to be created under it.</key>
-    <key alias="docTypeChanged">Document Type Changed</key>
-    <key alias="mapProperties">Map Properties</key>
-    <key alias="mapToProperty">Map to Property</key>
-    <key alias="newTemplate">New Template</key>
-    <key alias="newType">New Type</key>
-    <key alias="none">none</key>
-    <key alias="selectedContent">Content</key>
-    <key alias="selectNewDocType">Select New Document Type</key>
-    <key alias="successMessage">The Document Type of the selected content has been successfully changed to [new type] and the following properties mapped:</key>
-    <key alias="to">to</key>
-    <key alias="validationErrorPropertyWithMoreThanOneMapping">Could not complete property mapping as one or more properties have more than one mapping defined.</key>
-    <key alias="validDocTypesNote">Only alternate types valid for the current location are displayed.</key>
-  </area>
   <area alias="codefile">
     <key alias="createFolderFailedById">Failed to create a folder under parent with ID %0%</key>
     <key alias="createFolderFailedByName">Failed to create a folder under parent with name %0%</key>
@@ -360,7 +340,13 @@
   <area alias="member">
     <key alias="createNewMember">Create a new member</key>
     <key alias="allMembers">All Members</key>
+    <key alias="createNewMember">Create a new member</key>
+    <key alias="duplicateMemberLogin">A member with this login already exists</key>
     <key alias="memberGroupNoProperties">Member groups have no additional properties for editing.</key>
+    <key alias="memberHasGroup">The member is already in group '%0%'</key>
+    <key alias="memberHasPassword">The member already has a password set</key>
+    <key alias="memberLockoutNotEnabled">Lockout is not enabled for this member</key>
+    <key alias="memberNotInGroup">The member is not in group '%0%'</key>
   </area>
   <area alias="contentType">
      <key alias="copyFailed">Failed to copy content type</key>
@@ -657,6 +643,8 @@
     <key alias="errorRegExpWithoutTab">%0% is not in a correct format</key>
   </area>
   <area alias="errors">
+    <key alias="defaultError">An unknown failure has occurred</key>
+    <key alias="concurrencyError">Optimistic concurrency failure, object has been modified</key>
     <key alias="receivedErrorFromServer">Received an error from the server</key>
     <key alias="dissallowedMediaType">The specified file type has been disallowed by the administrator</key>
     <key alias="codemirroriewarning">NOTE! Even though CodeMirror is enabled by configuration, it is disabled in Internet Explorer because it's not stable enough.</key>
@@ -753,6 +741,7 @@
     <key alias="logout">Logout</key>
     <key alias="macro">Macro</key>
     <key alias="mandatory">Mandatory</key>
+    <key alias="media">Media</key>
     <key alias="message">Message</key>
     <key alias="move">Move</key>
     <key alias="name">Name</key>
@@ -771,6 +760,7 @@
     <key alias="pleasewait">One moment please...</key>
     <key alias="previous">Previous</key>
     <key alias="properties">Properties</key>
+    <key alias="readMore">Read more</key>
     <key alias="rebuild">Rebuild</key>
     <key alias="reciept">Email to receive form data</key>
     <key alias="recycleBin">Recycle Bin</key>
@@ -1220,24 +1210,18 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="deletewarning">This will delete the package</key>
     <key alias="dropHere">Drop to upload</key>
     <key alias="includeAllChildNodes">Include all child nodes</key>
-    <key alias="orClickHereToUpload">or click here to choose package file</key>
-    <key alias="uploadPackage">Upload package</key>
-    <key alias="localPackageDescription">Install a local package by selecting it from your machine. Only install packages from sources you know and trust</key>
-    <key alias="uploadAnother">Upload another package</key>
-    <key alias="cancelAndUploadAnother">Cancel and upload another package</key>
     <key alias="accept">I accept</key>
     <key alias="termsOfUse">terms of use</key>
     <key alias="pathToFile">Path to file</key>
     <key alias="pathToFileDescription">Absolute path to file (ie: /bin/umbraco.bin)</key>
     <key alias="installed">Installed</key>
     <key alias="installedPackages">Installed packages</key>
-    <key alias="installLocal">Install local</key>
     <key alias="installFinish">Finish</key>
+    <key alias="installInstructions">Install instructions</key>
     <key alias="noConfigurationView">This package has no configuration view</key>
     <key alias="noPackagesCreated">No packages have been created yet</key>
     <key alias="noPackages">You don’t have any packages installed</key>
     <key alias="noPackagesDescription"><![CDATA[You don’t have any packages installed. Either install a local package by selecting it from your machine, or browse through available packages using the <strong>'Packages'</strong> icon in the top right of your screen]]></key>
-    <key alias="packageActions">Package Actions</key>
     <key alias="packageAuthorUrl">Author URL</key>
     <key alias="packageContent">Package Content</key>
     <key alias="packageFiles">Package Files</key>
@@ -1273,6 +1257,9 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="packageNoItemsText"><![CDATA[This package file doesn't contain any items to uninstall.<br/><br/>
       You can safely remove this from the system by clicking "uninstall package" below.]]></key>
     <key alias="packageOptions">Package options</key>
+    <key alias="packageMigrationsRun">Run pending package migrations</key>
+    <key alias="packageMigrationsComplete">Package migrations have successfully completed.</key>
+    <key alias="packageMigrationsNonePending">All package migrations have successfully completed.</key>
     <key alias="packageReadme">Package readme</key>
     <key alias="packageRepository">Package repository</key>
     <key alias="packageUninstallConfirm">Confirm package uninstall</key>
@@ -1286,14 +1273,6 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="packageVersionUpgrade">Upgrading from version</key>
     <key alias="packageAlreadyInstalled">Package already installed</key>
     <key alias="targetVersionMismatch">This package cannot be installed, it requires a minimum Umbraco version of</key>
-    <key alias="installStateUninstalling">Uninstalling...</key>
-    <key alias="installStateDownloading">Downloading...</key>
-    <key alias="installStateImporting">Importing...</key>
-    <key alias="installStateInstalling">Installing...</key>
-    <key alias="installStateRestarting">Restarting, please wait...</key>
-    <key alias="installStateComplete">All done, your browser will now refresh, please wait...</key>
-    <key alias="installStateCompleted">Please click 'Finish' to complete installation and reload the page.</key>
-    <key alias="installStateUploading">Uploading package...</key>
     <key alias="verifiedToWorkOnUmbracoCloud">Verified to work on Umbraco Cloud</key>
   </area>
   <area alias="paste">
@@ -1455,7 +1434,7 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="validationFailedMessage">Validation errors must be fixed before the item can be saved</key>
     <key alias="operationFailedHeader">Failed</key>
     <key alias="operationSavedHeader">Saved</key>
-      <key alias="operationSavedHeaderReloadUser">Saved.  To view the changes please reload your browser</key>
+    <key alias="operationSavedHeaderReloadUser">Saved. To view the changes please reload your browser</key>
     <key alias="invalidUserPermissionsText">Insufficient user permissions, could not complete the operation</key>
     <key alias="operationCancelledHeader">Cancelled</key>
     <key alias="operationCancelledText">Operation was cancelled by a 3rd party add-in</key>
@@ -1920,6 +1899,7 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="descriptionField">Description field</key>
     <key alias="disabled">Disable User</key>
     <key alias="documentType">Document Type</key>
+    <key alias="duplicateLogin">A user with this login already exists</key>
     <key alias="editors">Editor</key>
     <key alias="excerptField">Excerpt field</key>
     <key alias="failedPasswordAttempts">Failed login attempts</key>
@@ -1952,6 +1932,12 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="passwordInvalid">Invalid current password</key>
     <key alias="passwordIsDifferent">There was a difference between the new password and the confirmed password. Please try again!</key>
     <key alias="passwordMismatch">The confirmed password doesn't match the new password!</key>
+    <key alias="passwordRequiresDigit">The password must have at least one digit ('0'-'9')</key>
+    <key alias="passwordRequiresLower">The password must have at least one lowercase ('a'-'z')</key>
+    <key alias="passwordRequiresNonAlphanumeric">The password must have at least one non alphanumeric character</key>
+    <key alias="passwordRequiresUniqueChars">The password must use at least %0% different characters</key>
+    <key alias="passwordRequiresUpper">The password must have at least one uppercase ('A'-'Z')</key>
+    <key alias="passwordTooShort">The password must be at least %0% characters long</key>
     <key alias="permissionReplaceChildren">Replace child node permissions</key>
     <key alias="permissionSelectedPages">You are currently modifying permissions for the pages:</key>
     <key alias="permissionSelectPages">Select pages to modify their permissions</key>
@@ -1972,8 +1958,12 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="updateDate">User last updated</key>
     <key alias="userCreated">has been created</key>
     <key alias="userCreatedSuccessHelp">The new user has successfully been created. To log in to Umbraco use the password below.</key>
+    <key alias="userHasPassword">The user already has a password set</key>
+    <key alias="userHasGroup">The user is already in group '%0%'</key>
+    <key alias="userLockoutNotEnabled">Lockout is not enabled for this user</key>
     <key alias="userManagement">User management</key>
     <key alias="username">Name</key>
+    <key alias="userNotInGroup">The user is not in group '%0%'</key>
     <key alias="userPermissions">User permissions</key>
     <key alias="usergroup">User group</key>
     <key alias="userInvited">has been invited</key>
@@ -2123,6 +2113,14 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="invalidNull">Value cannot be null</key>
     <key alias="invalidEmpty">Value cannot be empty</key>
     <key alias="invalidPattern">Value is invalid, it does not match the correct pattern</key>
+    <key alias="invalidMemberGroupName">Invalid member group name</key>
+    <key alias="invalidUserGroupName">Invalid user group name</key>
+    <key alias="invalidToken">Invalid token</key>
+    <key alias="invalidUsername">Invalid username</key>
+    <key alias="duplicateEmail">Email '%0%' is already taken</key>
+    <key alias="duplicateUserGroupName">User group name '%0%' is already taken</key>
+    <key alias="duplicateMemberGroupName">Member group name '%0%' is already taken</key>
+    <key alias="duplicateUsername">Username '%0%' is already taken</key>
     <key alias="customValidation">Custom validation</key>
     <key alias="entriesShort"><![CDATA[Minimum %0% entries, requires <strong>%1%</strong> more.]]></key>
     <key alias="entriesExceed"><![CDATA[Maximum %0% entries, <strong>%1%</strong> too many.]]></key>
@@ -2169,13 +2167,13 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="httpsCheckExpiringCertificate">Your website's SSL certificate is expiring in %0% days.</key>
     <key alias="healthCheckInvalidUrl">Error pinging the URL %0% - '%1%'</key>
     <key alias="httpsCheckIsCurrentSchemeHttps">You are currently %0% viewing the site using the HTTPS scheme.</key>
-    <key alias="httpsCheckConfigurationRectifyNotPossible">The appSetting 'Umbraco.Core.UseHttps' is set to 'false' in your web.config file. Once you access this site using the HTTPS scheme, that should be set to 'true'.</key>
-    <key alias="httpsCheckConfigurationCheckResult">The appSetting 'Umbraco.Core.UseHttps' is set to '%0%' in your web.config file, your cookies are %1% marked as secure.</key>
-    <key alias="httpsCheckEnableHttpsError">Could not update the 'Umbraco.Core.UseHttps' setting in your web.config file. Error: %0%</key>
+    <key alias="httpsCheckConfigurationRectifyNotPossible">The configuration value 'Umbraco:CMS:Global:UseHttps' is set to 'false' in your web.config file. Once you access this site using the HTTPS scheme, that should be set to 'true'.</key>
+    <key alias="httpsCheckConfigurationCheckResult">The configuration value 'Umbraco:CMS:Global:UseHttps' is set to '%0%' in your web.config file, your cookies are %1% marked as secure.</key>
+    <key alias="httpsCheckEnableHttpsError">Could not update the 'Umbraco:CMS:Global:UseHttps' setting in your web.config file. Error: %0%</key>
     <!-- The following keys don't get tokens passed in -->
     <key alias="httpsCheckEnableHttpsButton">Enable HTTPS</key>
     <key alias="httpsCheckEnableHttpsDescription">Sets umbracoSSL setting to true in the appSettings of the web.config file.</key>
-    <key alias="httpsCheckEnableHttpsSuccess">The appSetting 'Umbraco.Core.UseHttps' is now set to 'true' in your web.config file, your cookies will be marked as secure.</key>
+    <key alias="httpsCheckEnableHttpsSuccess">The configuration value 'Umbraco:CMS:Global:UseHttps' is now set to 'true' in your web.config file, your cookies will be marked as secure.</key>
     <key alias="rectifyButton">Fix</key>
     <key alias="cannotRectifyShouldNotEqual">Cannot fix a check with a value comparison type of 'ShouldNotEqual'.</key>
     <key alias="cannotRectifyShouldEqualWithValue">Cannot fix a check with a value comparison type of 'ShouldEqual' with a provided value.</key>
@@ -2193,6 +2191,10 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="requiredFolderPermissionFailed"><![CDATA[The following folders must be set up with modify permissions but could not be acccessed: <strong>%0%</strong>.]]></key>
     <key alias="optionalFolderPermissionFailed"><![CDATA[The following folders must be set up with modify permissions for certain Umbraco operations to function but could not be acccessed: <strong>%0%</strong>. If they aren't being written to no action need be taken.]]></key>
     <key alias="filePermissionsCheckMessage">All files have the correct permissions set.</key>
+    <!-- The following keys get these tokens passed in:
+	    0: Path to the file not found
+  	-->
+    <key alias="fileNotFound">File does not exist: '%0%'.</key>
     <!-- The following keys get these tokens passed in:
 	    0: Comma delimitted list of failed folder paths
   	-->
@@ -2221,10 +2223,10 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
   	-->
     <key alias="excessiveHeadersFound"><![CDATA[The following headers revealing information about the website technology were found: <strong>%0%</strong>.]]></key>
     <key alias="excessiveHeadersNotFound">No headers revealing information about the website technology were found.</key>
-    <key alias="smtpMailSettingsNotFound">In the Web.config file, system.net/mailsettings could not be found.</key>
-    <key alias="smtpMailSettingsHostNotConfigured">In the Web.config file system.net/mailsettings section, the host is not configured.</key>
+    <key alias="smtpMailSettingsNotFound">The 'Umbraco:CMS:Global:Smtp' configuration could not be found.</key>
+    <key alias="smtpMailSettingsHostNotConfigured">The 'Umbraco:CMS:Global:Smtp:Host' configuration could not be found.</key>
     <key alias="smtpMailSettingsConnectionSuccess">SMTP settings are configured correctly and the service is operating as expected.</key>
-    <key alias="smtpMailSettingsConnectionFail">The SMTP server configured with host '%0%' and port '%1%' could not be reached. Please check to ensure the SMTP settings in the Web.config file system.net/mailsettings are correct.</key>
+    <key alias="smtpMailSettingsConnectionFail">The SMTP server configured with host '%0%' and port '%1%' could not be reached. Please check to ensure the SMTP settings in the configuration 'Umbraco:CMS:Global:Smtp' are correct.</key>
     <key alias="notificationEmailsCheckSuccessMessage"><![CDATA[Notification email has been set to <strong>%0%</strong>.]]></key>
     <key alias="notificationEmailsCheckErrorMessage"><![CDATA[Notification email is still set to the default value of <strong>%0%</strong>.]]></key>
     <key alias="scheduledHealthCheckEmailBody"><![CDATA[<html><body><p>Results of the scheduled Umbraco Health Checks run on %0% at %1% are as follows:</p>%2%</body></html>]]></key>
@@ -2349,6 +2351,7 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="contextDialogDescription">Perform action %0% on the %1% node</key>
     <key alias="addImageCaption">Add image caption</key>
     <key alias="searchContentTree">Search content tree</key>
+    <key alias="maxAmount">Maximum amount</key>
   </area>
   <area alias="references">
     <key alias="tabName">References</key>
@@ -2611,6 +2614,12 @@ To manage your website, simply open the Umbraco backoffice and start adding cont
     <key alias="viewPublishedContentDescription">You are in Preview Mode, do you want exit in order to view the published version of your website?</key>
     <key alias="viewPublishedContentAcceptButton">View published version</key>
     <key alias="viewPublishedContentDeclineButton">Stay in preview mode</key>
+  </area>
+  <area alias="permissions">
+    <key alias="FolderCreation">Folder creation</key>
+    <key alias="FileWritingForPackages">File writing for packages</key>
+    <key alias="FileWriting">File writing</key>
+    <key alias="MediaFolderCreation">Media folder creation</key>
   </area>
   <area alias="treeSearch">
     <key alias="searchResult">item returned</key>

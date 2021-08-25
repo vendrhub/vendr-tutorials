@@ -100,7 +100,7 @@
     <key alias="domainUpdated">Doména '%0%' byla aktualizována</key>
     <key alias="orEdit">Editace aktuálních domén</key>
     <key alias="domainHelpWithVariants">
-    	<![CDATA[Povolené názvy domén jsou: "example.com", "www.example.com", "example.com:8080", nebo "https://www.example.com/".
+      <![CDATA[Povolené názvy domén jsou: "example.com", "www.example.com", "example.com:8080", nebo "https://www.example.com/".
      Dále jsou podporovány také jednoúrovňové cesty v doménách, např. "example.com/en" nebo "/en".]]></key>
     <key alias="inherit">Dědit</key>
     <key alias="setLanguage">Kultura</key>
@@ -153,7 +153,7 @@
     <key alias="deleteTag">Smazat štítek</key>
     <key alias="confirmActionCancel">Zrušit</key>
     <key alias="confirmActionConfirm">Potvrdit</key>
-	  <key alias="morePublishingOptions">Další možnosti publikování</key>
+    <key alias="morePublishingOptions">Další možnosti publikování</key>
   </area>
   <area alias="auditTrails">
     <key alias="atViewingFor">Zobrazení pro</key>
@@ -184,26 +184,6 @@
     <key alias="smallSendToPublishVariant">Odeslat k publikování</key>
     <key alias="smallSort">Seřadit</key>
     <key alias="historyIncludingVariants">Historie (všechny jazyky)</key>
-  </area>
-  <area alias="changeDocType">
-    <key alias="changeDocTypeInstruction">Abyste změnili typ dokumentu pro zvolený obsah, nejprve jej vyberte ze seznamu typů platných pro tohle umístění.</key>
-    <key alias="changeDocTypeInstruction2">Pak potvrďte a/nebo pozměňte mapování vlastností z aktuálního typu na nový a dejte Uložit.</key>
-    <key alias="contentRepublished">Obsah byl znovu publikován.</key>
-    <key alias="currentProperty">Aktuální vlastnost</key>
-    <key alias="currentType">Aktuální typ</key>
-    <key alias="docTypeCannotBeChanged">Typ dokumentu nemůže být změněn, neboť neexistují alternativy platné pro toto umístění.</key>
-    <key alias="docTypeChanged">Typ dokumentu byl změněn</key>
-    <key alias="mapProperties">Mapování vlastností</key>
-    <key alias="mapToProperty">Mapování na vlastnost</key>
-    <key alias="newTemplate">Nová šablona</key>
-    <key alias="newType">Nový typ</key>
-    <key alias="none">nic</key>
-    <key alias="selectedContent">Obsah</key>
-    <key alias="selectNewDocType">Vybrat nový typ dokumentu</key>
-    <key alias="successMessage">Typ dokumentu pro zvolený obsah byl úspěšně změněný na [new type] a následující vlastnosti byly namapovány:</key>
-    <key alias="to">na</key>
-    <key alias="validationErrorPropertyWithMoreThanOneMapping">Nelze dokončit mapování vlastností, neboť nejméně jedna z vlastností má definováno více než jedno mapování.</key>
-    <key alias="validDocTypesNote">Jsou zobrazeny pouze alternativní typy platné pro aktuální umístění.</key>
   </area>
   <area alias="codefile">
     <key alias="createFolderFailedById">Nepodařilo se vytvořit složku pod rodičem s ID %0%</key>
@@ -272,7 +252,7 @@
     <key alias="updateDate">Naposledy změněno</key>
     <key alias="updateDateDesc" version="7.0">Datum/čas poslední změny dokumentu</key>
     <key alias="uploadClear">Odebrat soubor(y)</key>
-	  <key alias="uploadClearImageContext">Click here to remove the image from the media item</key>
+    <key alias="uploadClearImageContext">Click here to remove the image from the media item</key>
     <key alias="uploadClearFileContext">Click here to remove the file from the media item</key>
     <key alias="urls">URL adresa dokumentu</key>
     <key alias="memberof">Člen skupin(y)</key>
@@ -327,7 +307,7 @@
   <area alias="media">
     <key alias="clickToUpload">Klikněte pro nahrání</key>
     <key alias="orClickHereToUpload">nebo kliknutím sem vyberte soubory</key>
-        <key alias="dragFilesHereToUpload">Sem můžete přetáhnout a nahrát soubory.</key>
+    <key alias="dragFilesHereToUpload">Sem můžete přetáhnout a nahrát soubory.</key>
     <key alias="disallowedFileType">Tento soubor nelze nahrát, nemá povolený typ souboru</key>
     <key alias="maxFileSize">Maximální velikost souboru je</key>
     <key alias="mediaRoot">Nejvyšší složka médií</key>
@@ -357,7 +337,7 @@
     <key alias="noDocumentTypesAllowedAtRoot"><![CDATA[Nejsou zde k dispozici žádné povolené typy dokumentů pro vytváření obsahu. Musíte je povolit v sekci <strong>Typy dokumentů</strong> v části <strong>Nastavení</strong> změnou možnosti <strong>Povolit jako root</strong> v části <strong>Oprávnění</strong>.]]></key>
     <key alias="noMediaTypes" version="7.0"><![CDATA[Nejsou dostupné žádné povolené typy medií. Tyto musíte povolit v sekci nastavení pod <strong>"typy medií"</strong>.]]></key>
     <key alias="noMediaTypesWithNoSettingsAccess">Vybraná média ve stromu neumožňuje vytváření pod nimi žádná další média.</key>
-    <key alias="noMediaTypesEditPermissions">Upravit oprávnění pro tento typ média</key>    
+    <key alias="noMediaTypesEditPermissions">Upravit oprávnění pro tento typ média</key>
     <key alias="documentTypeWithoutTemplate">Typ dokumentu bez šablony</key>
     <key alias="newFolder">Nová složka</key>
     <key alias="newDataType">Nový datový typ</key>
@@ -441,7 +421,7 @@
     <key alias="linkinternal">Místní odkaz:</key>
     <key alias="linklocaltip">Při používání místních odkazů vložte znak "#" před odkaz</key>
     <key alias="linknewwindow">Otevřít v novém okně?</key>
-	<key alias="macroContainerSettings">Nastavení makra</key>
+    <key alias="macroContainerSettings">Nastavení makra</key>
     <key alias="macroDoesNotHaveProperties">Toto makro nemá žádné vlastnosti, které by bylo možno editovat</key>
     <key alias="paste">Vložit</key>
     <key alias="permissionsEdit">Editovat oprávnění pro</key>
@@ -1102,24 +1082,17 @@
     <key alias="deletewarning">Tím se balíček odstraní</key>
     <key alias="dropHere">Přetáhněte sem pro nahrání</key>
     <key alias="includeAllChildNodes">Zahrnout všechny podřízené uzly</key>
-    <key alias="orClickHereToUpload">nebo kliknutím sem vyberte soubor balíčku</key>
-    <key alias="uploadPackage">Nahrát balíček</key>
-    <key alias="localPackageDescription">Nainstalujte místní balíček výběrem ze svého počítače. Instalujte pouze balíčky ze zdrojů, které znáte a kterým důvěřujete</key>
-    <key alias="uploadAnother">Nahrát další balíček</key>
-    <key alias="cancelAndUploadAnother">Zrušit a nahrát další balíček</key>
     <key alias="accept">Přijímám</key>
     <key alias="termsOfUse">podmínky použití</key>
     <key alias="pathToFile">Cesta k souboru</key>
     <key alias="pathToFileDescription">Absolutní cesta k souboru (ie: /bin/umbraco.bin)</key>
     <key alias="installed">Nainstalováno</key>
     <key alias="installedPackages">Nainstalované balíčky</key>
-    <key alias="installLocal">Instalovat místní</key>
     <key alias="installFinish">Dokončit</key>
     <key alias="noConfigurationView">Tento balíček nemá žádné zobrazení konfigurace</key>
     <key alias="noPackagesCreated">Zatím nebyly vytvořeny žádné balíčky</key>
     <key alias="noPackages">Nemáte nainstalované žádné balíčky</key>
     <key alias="noPackagesDescription"><![CDATA[Nemáte nainstalované žádné balíčky. Nainstalujte místní balíček tak, že jej vyberete ze svého počítače, nebo procházejte dostupné balíčky pomocí ikony <strong>Balíčky</strong> v pravém horním rohu obrazovky.]]></key>
-    <key alias="packageActions">Akce balíčku</key>
     <key alias="packageAuthorUrl">Web autora</key>
     <key alias="packageContent">Obsah balíčku</key>
     <key alias="packageFiles">Soubory balíčku</key>
@@ -1173,9 +1146,6 @@
     <key alias="installStateImporting">Importuji...</key>
     <key alias="installStateInstalling">Instaluji...</key>
     <key alias="installStateRestarting">Restartuji, prosím čekejte...</key>
-    <key alias="installStateComplete">Vše je hotovo, váš prohlížeč se nyní obnoví, prosím čekejte...</key>
-    <key alias="installStateCompleted">Klepnutím na tlačítko „Dokončit“ dokončete instalaci a znovu načtěte stránku.</key>
-    <key alias="installStateUploading">Nahrávám balíček...</key>
   </area>
   <area alias="paste">
     <key alias="doNothing">Vložit s úplným formatováním (nedoporučeno)</key>
@@ -1272,11 +1242,11 @@
     <key alias="removeLink">Odebrat odkaz</key>
   </area>
   <area alias="imagecropper">
-        <key alias="reset">Zrušit oříznutí</key>
+    <key alias="reset">Zrušit oříznutí</key>
     <key alias="saveCrop">Uložit oříznutí</key>
     <key alias="addCrop">Přidat nové oříznutí</key>
-        <key alias="updateEditCrop">Hotovo</key>
-        <key alias="undoEditCrop">Vrátit změny</key>
+    <key alias="updateEditCrop">Hotovo</key>
+    <key alias="undoEditCrop">Vrátit změny</key>
   </area>
   <area alias="rollback">
     <key alias="headline">Vyberte verzi, kterou chcete porovnat s aktuální verzí</key>
@@ -1464,14 +1434,14 @@
     <key alias="insertDictionaryItemDesc">Položka slovníku je zástupný symbol pro překladatelný text, což usnadňuje vytváření návrhů pro vícejazyčné webové stránky.</key>
     <key alias="insertMacro">Vložit makro</key>
     <key alias="insertMacroDesc">
-            Makro je konfigurovatelná součást, která je skvělá pro opakovaně použitelné části návrhu, kde potřebujete předat parametry, jako jsou galerie, formuláře a seznamy.
-        </key>
+      Makro je konfigurovatelná součást, která je skvělá pro opakovaně použitelné části návrhu, kde potřebujete předat parametry, jako jsou galerie, formuláře a seznamy.
+    </key>
     <key alias="insertPageField">Vložit pole stránky umbraco</key>
     <key alias="insertPageFieldDesc">Zobrazuje hodnotu pojmenovaného pole z aktuální stránky s možnostmi upravit hodnotu nebo alternativní hodnoty.</key>
     <key alias="insertPartialView">Částečná šablona</key>
     <key alias="insertPartialViewDesc">
-            Částečná šablona je samostatný soubor šablony, který lze vykreslit uvnitř jiné šablony. Je to skvělé pro opakované použití nebo pro oddělení složitých šablon.
-        </key>
+      Částečná šablona je samostatný soubor šablony, který lze vykreslit uvnitř jiné šablony. Je to skvělé pro opakované použití nebo pro oddělení složitých šablon.
+    </key>
     <key alias="mastertemplate">Nadřazená šablona</key>
     <key alias="noMaster">Žádný master</key>
     <key alias="renderBody">Vykreslit podřízenou šablonu</key>
@@ -1563,11 +1533,11 @@
     <key alias="chooseExtra">Vyberat navíc</key>
     <key alias="chooseDefault">Zvolit výchozí</key>
     <key alias="areAdded">jsou přidány</key>
-        <key alias="warning">Varování</key>
-        <key alias="youAreDeleting">Odstraňujete konfiguraci řádku</key>
-        <key alias="deletingARow">
-            Odstranění názvu konfigurace řádku povede ke ztrátě dat pro veškerý existující obsah založený na této konfiguraci.
-        </key>
+    <key alias="warning">Varování</key>
+    <key alias="youAreDeleting">Odstraňujete konfiguraci řádku</key>
+    <key alias="deletingARow">
+      Odstranění názvu konfigurace řádku povede ke ztrátě dat pro veškerý existující obsah založený na této konfiguraci.
+    </key>
   </area>
   <area alias="contentTypeEditor">
     <key alias="compositions">Složení</key>
@@ -2102,7 +2072,7 @@
     <key alias="checkAllGroups">Zkontrolovat všechny skupiny</key>
     <key alias="checkGroup">Zkontrolovat skupinu</key>
     <key alias="helpText">
-        <![CDATA[
+      <![CDATA[
         <p>Kontrola vyhodnocuje různé oblasti vašeho webu z hlediska nastavení osvědčených postupů, konfigurace, potenciálních problémů atd. Problémy lze snadno vyřešit stisknutím tlačítka. Můžete přidat své vlastní kontroly, podívejte se na <a href="https://our.umbraco.com/documentation/Extending/Healthcheck/" target="_blank" rel="noopener" class="btn-link -underline">dokumentaci pro více informací</a> o vlastních kontrolách.</p>
         ]]>
     </key>
@@ -2214,32 +2184,32 @@
     <key alias="labelUsedByMedia">Použito v médiích</key>
   </area>
   <area alias="logViewer">
-      <key alias="logLevels">Úrovně logování</key>
-      <key alias="savedSearches">Uložená vyhledávání</key>
-      <key alias="totalItems">Celkem položek</key>
-      <key alias="timestamp">Časové razítko</key>
-      <key alias="level">Úroveň</key>
-      <key alias="machine">Stroj</key>
-      <key alias="message">Zpráva</key>
-      <key alias="exception">Výjimka</key>
-      <key alias="properties">Vlastnosti</key>
-      <key alias="searchWithGoogle">Vyhledat na Googlu</key>
-      <key alias="searchThisMessageWithGoogle">Vyhledat zprávu na Googlu</key>
-      <key alias="searchWithBing">Vyhledat na Bing</key>
-      <key alias="searchThisMessageWithBing">Vyhledat zprávu na Bing</key>
-      <key alias="searchOurUmbraco">Prohledat naše Umbraco</key>
-      <key alias="searchThisMessageOnOurUmbracoForumsAndDocs">Vyhledat tuto zprávu na našich fórech a dokumentech Umbraco</key>
-      <key alias="searchOurUmbracoWithGoogle">Vyhledat Our Umbraco na Googlu</key>
-      <key alias="searchOurUmbracoForumsUsingGoogle">Prohledat Our Umbraco fóra pomocí Googlu</key>
-      <key alias="searchUmbracoSource">Prohledat Umbraco Source</key>
-      <key alias="searchWithinUmbracoSourceCodeOnGithub">Vyhledat ve zdrojovém kódu Umbraco na Github</key>
-      <key alias="searchUmbracoIssues">Prohledat Umbraco Issues</key>
-      <key alias="searchUmbracoIssuesOnGithub">Prohledat Umbraco Issues na Github</key>
-      <key alias="deleteThisSearch">Smazat toto vyhledávání</key>
-      <key alias="findLogsWithRequestId">Najít logy s ID požadavku</key>
-      <key alias="findLogsWithNamespace">Najít logy se jmenným prostorem</key>
-      <key alias="findLogsWithMachineName">Najít logy s názvem stroje</key>
-      <key alias="open">Otevřít</key>
+    <key alias="logLevels">Úrovně logování</key>
+    <key alias="savedSearches">Uložená vyhledávání</key>
+    <key alias="totalItems">Celkem položek</key>
+    <key alias="timestamp">Časové razítko</key>
+    <key alias="level">Úroveň</key>
+    <key alias="machine">Stroj</key>
+    <key alias="message">Zpráva</key>
+    <key alias="exception">Výjimka</key>
+    <key alias="properties">Vlastnosti</key>
+    <key alias="searchWithGoogle">Vyhledat na Googlu</key>
+    <key alias="searchThisMessageWithGoogle">Vyhledat zprávu na Googlu</key>
+    <key alias="searchWithBing">Vyhledat na Bing</key>
+    <key alias="searchThisMessageWithBing">Vyhledat zprávu na Bing</key>
+    <key alias="searchOurUmbraco">Prohledat naše Umbraco</key>
+    <key alias="searchThisMessageOnOurUmbracoForumsAndDocs">Vyhledat tuto zprávu na našich fórech a dokumentech Umbraco</key>
+    <key alias="searchOurUmbracoWithGoogle">Vyhledat Our Umbraco na Googlu</key>
+    <key alias="searchOurUmbracoForumsUsingGoogle">Prohledat Our Umbraco fóra pomocí Googlu</key>
+    <key alias="searchUmbracoSource">Prohledat Umbraco Source</key>
+    <key alias="searchWithinUmbracoSourceCodeOnGithub">Vyhledat ve zdrojovém kódu Umbraco na Github</key>
+    <key alias="searchUmbracoIssues">Prohledat Umbraco Issues</key>
+    <key alias="searchUmbracoIssuesOnGithub">Prohledat Umbraco Issues na Github</key>
+    <key alias="deleteThisSearch">Smazat toto vyhledávání</key>
+    <key alias="findLogsWithRequestId">Najít logy s ID požadavku</key>
+    <key alias="findLogsWithNamespace">Najít logy se jmenným prostorem</key>
+    <key alias="findLogsWithMachineName">Najít logy s názvem stroje</key>
+    <key alias="open">Otevřít</key>
   </area>
   <area alias="clipboard">
     <key alias="labelForCopyAllEntries">Kopírovat %0%</key>
@@ -2254,21 +2224,21 @@
     <key alias="refreshStatus">Stav obnovení</key>
     <key alias="memoryCache">Cache paměť</key>
     <key alias="memoryCacheDescription">
-        <![CDATA[
+      <![CDATA[
             Toto tlačítko umožňuje znovu načíst mezipaměť úplným opětovným načtením z databáze (ale tato mezipaměť databáze nebude znovu vytvořena). To je poměrně rychlé. Použijte jej, pokud si myslíte, že mezipaměť paměti nebyla po některých událostech správně obnovena - což by naznačovalo menší problém Umbraco. (poznámka: spustí opětovné načtení na všech serverech v prostředí LB).
     ]]>
     </key>
     <key alias="reload">Znovu načíst</key>
     <key alias="databaseCache">Cache databáze</key>
     <key alias="databaseCacheDescription">
-        <![CDATA[
+      <![CDATA[
     Toto tlačítko umožňuje znovu vytvořit mezipaměť databáze, tj. obsah tabulky cmsContentNu. <strong>Znovuvytvoření může být náročné.</strong> Použijte jej, když nestačí obnovení stránky, a domníváte se, že mezipaměť databáze nebyla správně vygenerována - což by naznačovalo možný kritický problém Umbraco.
     ]]>
     </key>
     <key alias="rebuild">Obnovit</key>
     <key alias="internals">Internals</key>
     <key alias="internalsDescription">
-        <![CDATA[
+      <![CDATA[
     Toto tlačítko umožňuje spustit kolekci snímků NuCache (po spuštění fullCLR GC).
      Pokud nevíte, co to znamená, pravděpodobně to <em>nebudete</em> muset používat.
     ]]>
@@ -2280,21 +2250,21 @@
   <area alias="profiling">
     <key alias="performanceProfiling">Profilování výkonu</key>
     <key alias="performanceProfilingDescription">
-        <![CDATA[
+      <![CDATA[
                 <p> Umbraco aktuálně běží v režimu ladění. To znamená, že můžete použít vestavěný profiler výkonu k vyhodnocení výkonu při vykreslování stránek. </p> <p> Pokud chcete aktivovat profiler pro konkrétní vykreslení stránky, jednoduše při požadavku na stránku jednoduše přidejte <b>umbDebug=true</b> do URL.</p> <p> Pokud chcete, aby byl profiler ve výchozím nastavení aktivován pro všechna vykreslení stránky, můžete použít přepínač níže. Ve vašem prohlížeči nastaví soubor cookie, který automaticky aktivuje profiler. Jinými slovy, profiler bude ve výchozím nastavení aktivní pouze ve <i> vašem </i> prohlížeči, ne v ostatních. </p>
         ]]>
     </key>
     <key alias="activateByDefault">Ve výchozím stavu aktivovat profiler</key>
     <key alias="reminder">Přátelské připomenutí</key>
     <key alias="reminderDescription">
-        <![CDATA[
+      <![CDATA[
             <p>
                 Nikdy byste neměli nechat produkční web běžet v režimu ladění. Režim ladění je vypnut nastavením <b> debug="false" </b> na elementu <b>compilation</b> v souboru web.config.
             </p>
         ]]>
     </key>
     <key alias="profilerEnabledDescription">
-        <![CDATA[
+      <![CDATA[
             <p>
                 Umbraco v současné době neběží v režimu ladění, takže nemůžete použít vestavěný profiler. Takto by to mělo být pro produkční web.
             </p>
@@ -2307,7 +2277,7 @@
   <area alias="settingsDashboardVideos">
     <key alias="trainingHeadline">Hodiny tréninkových videí Umbraco jsou blíž než si myslíte</key>
     <key alias="trainingDescription">
-        <![CDATA[
+      <![CDATA[
         <p> Chcete ovládnout Umbraco? Stačí strávit pár minut sledování jednoho z těchto videí o používání Umbraco. Nebo navštivte <a href="http://umbraco.tv" target="_blank" rel="noopener">umbraco.tv</a>, kde najdete ještě více videí o Umbraco </p>
     ]]>
     </key>
@@ -2318,27 +2288,27 @@
     <key alias="startDescription">Tato část obsahuje stavební bloky pro váš web Umbraco. Podle níže uvedených odkazů se dozvíte více o práci s položkami v části Nastavení</key>
     <key alias="more">Zjistit více</key>
     <key alias="bulletPointOne">
-        <![CDATA[
+      <![CDATA[
             Další informace o práci s položkami naleznete v části Nastavení <a class="btn-link -underline" href="https://our.umbraco.com/documentation/Getting-Started/Backoffice/Sections/" target="_blank" rel="noopener">v sekci Dokumentace</a> v Our Umbraco
         ]]>
     </key>
     <key alias="bulletPointTwo">
-        <![CDATA[
+      <![CDATA[
             Zeptejte se na <a class="btn-link -underline" href="https://our.umbraco.com/forum" target="_blank" rel="noopener">fóru komunity</a>
         ]]>
     </key>
     <key alias="bulletPointThree">
-        <![CDATA[
+      <![CDATA[
             Podívejte se na naše <a class="btn-link -underline" href="https://umbraco.tv" target="_blank" rel="noopener">výuková videa</a> (některá jsou zdarma, jiná vyžadují předplatné)
         ]]>
     </key>
     <key alias="bulletPointFour">
-        <![CDATA[
+      <![CDATA[
             Další informace o našich <a class="btn-link -underline" href="https://umbraco.com/products/" target="_blank" rel="noopener">nástrojích zvyšujících produktivitu a komerční podpoře</a>
         ]]>
     </key>
     <key alias="bulletPointFive">
-        <![CDATA[
+      <![CDATA[
             Zjistěte více o možnostech <a class="btn-link -underline" href="https://umbraco.com/training" target="_blank" rel="noopener">školení a certifikace</a>
         ]]>
     </key>
@@ -2346,7 +2316,7 @@
   <area alias="startupDashboard">
     <key alias="fallbackHeadline">Vítejte v přátelském CMS</key>
     <key alias="fallbackDescription">Děkujeme, že jste si vybrali Umbraco - myslíme si, že by to mohl být začátek něčeho krásného. I když se to může zpočátku zdát ohromující, udělali jsme hodně pro to, aby byla křivka učení co nejhladší a nejrychlejší.</key>
-  </area>  
+  </area>
   <area alias="formsDashboard">
     <key alias="formsHeadline">Umbraco formuláře</key>
     <key alias="formsDescription">Vytvářejte formuláře pomocí intuitivního rozhraní drag and drop. Od jednoduchých kontaktních formulářů, které odesílají e-maily, až po pokročilé dotazníky, které se integrují do systémů CRM. Vaši klienti to budou milovat!</key>

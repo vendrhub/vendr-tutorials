@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits UmbracoViewPage
 @{
 	Layout = null;
 
@@ -16,10 +16,10 @@
     <title>@(metaTitle)</title>
     <meta name="description" content="@(Model.Value<string>("metaDescription"))" />
     <meta name="keywords" content="@(Model.Value<string>("metaKeywords"))" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:500|Open+Sans:400,700&display=swap" rel="stylesheet">
-    <link href="/css/rbc.css" rel="stylesheet">
+    <!link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" rel="stylesheet">
+    <!link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!link href="https://fonts.googleapis.com/css?family=Zilla+Slab:500|Open+Sans:400,700&display=swap" rel="stylesheet">
+    <!link href="/css/rbc.css" rel="stylesheet">
     @RenderSection("head", false)
 </head>
 <body class="text-gray-800">
@@ -33,7 +33,7 @@
             <ul class="reset-list flex flex-col items-center mt-4 sm:flex-row sm:mt-0">
                 @foreach(var node in homePage.Children.Where(x => x.IsVisible()))
                 {
-                    <li class="mt-2 sm:mt-0 sm:ml-6"><a href="@node.Url" class="hover:text-green-400">@node.Name</a></li>
+                    <li class="mt-2 sm:mt-0 sm:ml-6"><a href="@node.Url()" class="hover:text-green-400">@node.Name</a></li>
                 }
                 <li class="my-6 flex sm:my-0 sm:ml-6">
                     <a href="#" class="bg-gray-800 text-sm text-white rounded-full flex items-center justify-center w-6 h-6 hover:bg-green-400"><i class="fa fa-facebook"></i></a>
@@ -56,7 +56,6 @@
         </footer>
         <div class="text-center text-sm my-6"><a href="https://www.rcc-furniture.com/" class="hover:text-green-400">All product images Copyright &copy; RCC Furniture</a></div>
     </div>
-    <script src="https://instant.page/3.0.0" integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1" type="module" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplestatemanager/2.2.5/ssm.min.js" integrity="sha384-XnVIWbxzq0gb9RKt1v5zw74IEsfpPVIz723OMFYy3jodu41eRL54OyLzf5atZdu+" crossorigin="anonymous" defer></script>
     <script src="/scripts/rbc.js"></script>
