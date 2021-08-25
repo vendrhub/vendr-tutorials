@@ -318,28 +318,43 @@
       <HintPath>..\..\packages\UmbracoCms.Web.8.15.2\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Checkout, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Checkout.2.0.0-alpha-v2-0090\lib\net472\Vendr.Checkout.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Checkout.2.0.0-alpha-v2-0106\lib\net472\Vendr.Checkout.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Common.2.0.0-rc0012\lib\netstandard2.0\Vendr.Common.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Common.2.0.0-rc0013\lib\netstandard2.0\Vendr.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Core.2.0.0-rc0012\lib\netstandard2.0\Vendr.Core.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Core.2.0.0-rc0013\lib\netstandard2.0\Vendr.Core.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Infrastructure, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Infrastructure.2.0.0-rc0012\lib\net472\Vendr.Infrastructure.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Infrastructure.2.0.0-rc0013\lib\net472\Vendr.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Umbraco, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.2.0.0-rc0012\lib\net472\Vendr.Umbraco.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Umbraco.2.0.0-rc0013\lib\net472\Vendr.Umbraco.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Umbraco.Startup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.Startup.2.0.0-rc0012\lib\net472\Vendr.Umbraco.Startup.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Umbraco.Startup.2.0.0-rc0013\lib\net472\Vendr.Umbraco.Startup.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Umbraco.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.Web.2.0.0-rc0012\lib\net472\Vendr.Umbraco.Web.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Umbraco.Web.2.0.0-rc0013\lib\net472\Vendr.Umbraco.Web.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Web.2.0.0-rc0012\lib\net472\Vendr.Web.dll</HintPath>
+      <HintPath>..\..\packages\Vendr.Web.2.0.0-rc0013\lib\net472\Vendr.Web.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -348,11 +363,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\VendrCheckout\BackOffice\views\dashboards\installer.controller.js" />
-    <Content Include="App_Plugins\VendrCheckout\BackOffice\views\dashboards\installer.html" />
-    <Content Include="App_Plugins\VendrCheckout\Config\vendrcheckout.order.editor.config.js" />
-    <Content Include="App_Plugins\VendrCheckout\Lang\en-US.xml" />
-    <Content Include="App_Plugins\VendrCheckout\Scripts\vendrcheckout.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -387,18 +397,6 @@
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
-    <Content Include="App_Plugins\VendrCheckout\package.manifest" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderConfirmationEmail.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutOrderErrorEmail.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Partials\VendrCheckoutOrderInfo.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Partials\VendrCheckoutPrevNext.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutConfirmationPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutInformationPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutMaster.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutPaymentPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutReviewPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\tinyMceConfig.config" />
@@ -406,11 +404,6 @@
     <Content Include="config\serilog.config" />
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutPaymentMethodPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\VendrCheckoutShippingMethodPage.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\_ViewImports.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\_ViewStart.cshtml" />
-    <Content Include="App_Plugins\VendrCheckout\Views\Emails\VendrCheckoutGiftCardEmail.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\HomePage.cshtml" />
@@ -447,6 +440,9 @@
       <Project>{4c77318e-bb26-4546-aef1-3bc2eed131f8}</Project>
       <Name>Vendr.RemadeByClive</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Plugins\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
