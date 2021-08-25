@@ -1,8 +1,8 @@
 ﻿@using Vendr.Extensions;
 @using Vendr.Core.Api;
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits UmbracoViewPage
 @{
-    var product = VendrApi.Instance.GetProduct(Model.Key.ToString(), Culture);
+    var product = VendrApi.Instance.GetProduct(Model.Key.ToString(), System.Threading.Thread.CurrentThread.CurrentUICulture.Name);
     var price = product.CalculatePrice();
 }
 

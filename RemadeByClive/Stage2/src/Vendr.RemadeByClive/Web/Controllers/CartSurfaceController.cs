@@ -1,12 +1,18 @@
-﻿using System.Web.Mvc;
-using Umbraco.Core.Models.PublishedContent;
-using Umbraco.Web;
-using Umbraco.Web.Mvc;
-using Vendr.Extensions;
+﻿using Vendr.Extensions;
 using Vendr.Core.Models;
 using Vendr.Core.Api;
 using Vendr.RemadeByClive.Web.Dtos;
 using Vendr.Common.Validation;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Extensions;
+using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace Vendr.RemadeByClive.Web.Controllers
 {
@@ -14,13 +20,15 @@ namespace Vendr.RemadeByClive.Web.Controllers
     {
         private readonly IVendrApi _vendrApi;
 
-        public CartSurfaceController(IVendrApi vendrApi)
+        public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider,
+            IVendrApi vendrApi)
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
             _vendrApi = vendrApi;
         }
 
         [HttpPost]
-        public ActionResult AddToCart(AddToCartDto postModel)
+        public IActionResult AddToCart(AddToCartDto postModel)
         {
             try
             {
@@ -49,7 +57,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateCart(UpdateCartDto postModel)
+        public IActionResult UpdateCart(UpdateCartDto postModel)
         {
             try
             {
@@ -83,7 +91,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult RemoveFromCart(RemoveFromCartDto postModel)
+        public IActionResult RemoveFromCart(RemoveFromCartDto postModel)
         {
             try
             {

@@ -193,3 +193,7 @@ Desktop.ini
 **/App_Data/Logs/
 **/App_Data/TEMP/
 **/App_Data/cache/
+
+**/umbraco/Data/Logs/
+**/umbraco/Data/TEMP/
+**/umbraco/Data/cache/

@@ -195,26 +195,6 @@
     <key alias="smallCustom">Brugerdefineret</key>
     <key alias="historyIncludingVariants">Historik (alle sprog)</key>
   </area>
-  <area alias="changeDocType">
-    <key alias="changeDocTypeInstruction">For at skifte det valgte indholds dokumenttype, skal du først vælge en ny dokumenttype, som er gyldig på denne placering.</key>
-    <key alias="changeDocTypeInstruction2">Kontroller derefter, at alle egenskaber bliver overført rigtigt til den nye dokumenttype, og klik derefter på Gem.</key>
-    <key alias="contentRepublished">Indholdet er blevet genudgivet.</key>
-    <key alias="currentProperty">Nuværende egenskab</key>
-    <key alias="currentType">Nuværende type</key>
-    <key alias="docTypeCannotBeChanged">Du kan ikke skifte dokumenttype, da der ikke er andre gyldige dokumenttyper på denne placering.</key>
-    <key alias="docTypeChanged">Dokumenttype skiftet</key>
-    <key alias="mapProperties">Overfør egenskaber</key>
-    <key alias="mapToProperty">Overfør til egenskab</key>
-    <key alias="newTemplate">Ny skabelon</key>
-    <key alias="newType">Ny type</key>
-    <key alias="none">ingen</key>
-    <key alias="selectedContent">Indhold</key>
-    <key alias="selectNewDocType">Vælg ny dokumenttype</key>
-    <key alias="successMessage">Dokumenttypen på detvalgte indhold blev skiftet til [new type], og følgende egenskaber blev overført:</key>
-    <key alias="to">til</key>
-    <key alias="validationErrorPropertyWithMoreThanOneMapping">Overførsel af egenskaber kunne ikke fuldføres, da en eller flere egenskaber er indstillet til at blive overført mere end én gang.</key>
-    <key alias="validDocTypesNote">Kun andre dokumenttyper, der er gyldige på denne placering, vises.</key>
-  </area>
   <area alias="codefile">
     <key alias="createFolderFailedById">Oprettelse af mappen under parent med ID %0% fejlede</key>
     <key alias="createFolderFailedByName">Oprettelse af mappen under parent med navnet %0% fejlede</key>
@@ -817,6 +797,7 @@
     <key alias="yes">Ja</key>
     <key alias="folder">Mappe</key>
     <key alias="searchResults">Søgeresultater</key>
+    <key alias="readMore">Læs mere</key>
     <key alias="reorder">Sortér</key>
     <key alias="reorderDone">Afslut sortering</key>
     <key alias="preview">Eksempel</key>
@@ -1017,24 +998,17 @@ Mange hilsner fra Umbraco robotten
     <key alias="deletewarning">Dette vil slette pakken</key>
     <key alias="dropHere">Slip her for at uploade</key>
     <key alias="includeAllChildNodes">Inkludér alle underliggende sider</key>
-    <key alias="orClickHereToUpload">eller klik her for at vælge pakkefil</key>
-    <key alias="uploadPackage">Upload pakke</key>
-    <key alias="localPackageDescription">Installér en lokal pakke ved at vælge den fra din computer. Installér kun pakker fra kilder, du kender og stoler på</key>
-    <key alias="uploadAnother">Upload en anden pakke</key>
-    <key alias="cancelAndUploadAnother">Annuller og upload en anden pakke</key>
     <key alias="accept">Jeg accepterer</key>
     <key alias="termsOfUse">betingelser for anvendelse</key>
     <key alias="pathToFile">Sti til fil</key>
     <key alias="pathToFileDescription">Absolut sti til fil (f.eks.: /bin/umbraco.bin)</key>
     <key alias="installed">Installeret</key>
     <key alias="installedPackages">Installerede pakker</key>
-    <key alias="installLocal">Installér lokal</key>
     <key alias="installFinish">Afslut</key>
     <key alias="noConfigurationView">Denne pakke har ingen konfigurationsvisning</key>
     <key alias="noPackagesCreated">Der er ikke blevet oprettet nogle pakker endnu</key>
     <key alias="noPackages">Du har ingen pakker installeret</key>
     <key alias="noPackagesDescription"><![CDATA[Du har ikke nogen pakker installeret. Du kan enten installere en lokal pakke ved at vælge den fra din computer eller gennemse de tilgængelige pakker ved hjælp af ikonet <strong>'Pakker'</strong> øverst til højre på din skærm]]></key>
-    <key alias="packageActions">Pakkehandlinger</key>
     <key alias="packageAuthorUrl">Forfatter URL</key>
     <key alias="packageContent">Pakkeindhold</key>
     <key alias="packageFiles">Pakkefiler</key>
@@ -1081,14 +1055,6 @@ Mange hilsner fra Umbraco robotten
     <key alias="packageVersionUpgrade">Opgraderer fra version</key>
     <key alias="packageAlreadyInstalled">Pakke allerede installeret</key>
     <key alias="targetVersionMismatch">Denne pakke kan ikke installeres, den kræver en minimum Umbraco version af</key>
-    <key alias="installStateUninstalling">Afinstallerer...</key>
-    <key alias="installStateDownloading">Downloader...</key>
-    <key alias="installStateImporting">Importeret...</key>
-    <key alias="installStateInstalling">Installerer...</key>
-    <key alias="installStateRestarting">Genstarter, vent venligst...</key>
-    <key alias="installStateComplete">Færdig, din browser opdateres nu, vent venligst...</key>
-    <key alias="installStateCompleted">Klik venligst på 'Afslut' for at gennemføre installation og opdatere siden.</key>
-    <key alias="installStateUploading">Uploader pakke...</key>
   </area>
   <area alias="paste">
     <key alias="doNothing">Indsæt med fuld formattering (Anbefales ikke)</key>
@@ -1932,6 +1898,7 @@ Mange hilsner fra Umbraco robotten
     <key alias="contextMenuDescription">Udfør handling %0% på %1% noden</key>
     <key alias="addImageCaption">Tilføj billede overskrift</key>
     <key alias="searchContentTree">Søg i indholdstræet</key>
+    <key alias="maxAmount">Maximum antal</key>
   </area>
   <area alias="references">
     <key alias="tabName">Referencer</key>
@@ -2075,5 +2042,11 @@ Mange hilsner fra Umbraco robotten
     <key alias="viewPublishedContentDescription">Du er i forhåndsvisning, vil du afslutte for at se den udgivet version?</key>
     <key alias="viewPublishedContentAcceptButton">Se udgivet version</key>
     <key alias="viewPublishedContentDeclineButton">Forbliv i forhåndsvisning</key>
+  </area>
+  <area alias="permissions">
+    <key alias="FolderCreation">Mappeoprettelse</key>
+    <key alias="FileWritingForPackages">Filskrivning for pakker</key>
+    <key alias="FileWriting">Filskrivning</key>
+    <key alias="MediaFolderCreation">Medie mappeoprettelse</key>
   </area>
 </language>

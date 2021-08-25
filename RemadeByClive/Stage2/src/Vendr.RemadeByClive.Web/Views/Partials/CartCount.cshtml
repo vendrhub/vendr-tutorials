@@ -1,6 +1,6 @@
 ﻿@using Vendr.Core.Models;
 @using Vendr.Core.Api;
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits UmbracoViewPage
 @{ 
     var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
     var currentOrder = VendrApi.Instance.GetCurrentOrder(store.Id);
