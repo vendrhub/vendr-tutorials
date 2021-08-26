@@ -322,39 +322,25 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Vendr.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Common.2.0.0-rc0013\lib\netstandard2.0\Vendr.Common.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Common.2.0.0-rc0016\lib\netstandard2.0\Vendr.Common.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Core.2.0.0-rc0013\lib\netstandard2.0\Vendr.Core.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Core.2.0.0-rc0016\lib\netstandard2.0\Vendr.Core.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Infrastructure, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Infrastructure.2.0.0-rc0013\lib\net472\Vendr.Infrastructure.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Infrastructure.2.0.0-rc0016\lib\net472\Vendr.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Umbraco, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.2.0.0-rc0013\lib\net472\Vendr.Umbraco.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Umbraco.2.0.0-rc0016\lib\net472\Vendr.Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Umbraco.Startup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.Startup.2.0.0-rc0013\lib\net472\Vendr.Umbraco.Startup.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Umbraco.Startup.2.0.0-rc0016\lib\net472\Vendr.Umbraco.Startup.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Umbraco.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Umbraco.Web.2.0.0-rc0013\lib\net472\Vendr.Umbraco.Web.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Umbraco.Web.2.0.0-rc0016\lib\net472\Vendr.Umbraco.Web.dll</HintPath>
     </Reference>
     <Reference Include="Vendr.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vendr.Web.2.0.0-rc0013\lib\net472\Vendr.Web.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Vendr.Web.2.0.0-rc0016\lib\net472\Vendr.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
