@@ -1,8 +1,10 @@
-﻿@using Vendr.Extensions;
+﻿@using Vendr.Core.Models
+@using Vendr.Extensions;
 @using Vendr.Core.Api;
 @inherits UmbracoViewPage
 @{
-    var product = VendrApi.Instance.GetProduct(Model.Key.ToString(), System.Threading.Thread.CurrentThread.CurrentUICulture.Name);
+    var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+    var product = VendrApi.Instance.GetProduct(store.Id, Model.Key.ToString(), System.Threading.Thread.CurrentThread.CurrentUICulture.Name);
     var price = product.CalculatePrice();
 }
 

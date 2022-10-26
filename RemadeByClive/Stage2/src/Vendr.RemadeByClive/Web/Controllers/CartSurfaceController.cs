@@ -32,7 +32,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrApi.Uow.Create())
+                _vendrApi.Uow.Execute(uow =>
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
                     var order = _vendrApi.GetOrCreateCurrentOrder(store.Id)
@@ -42,7 +42,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                     _vendrApi.SaveOrder(order);
 
                     uow.Complete();
-                }
+                });
             }
             catch (ValidationException)
             {
@@ -61,7 +61,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrApi.Uow.Create())
+                _vendrApi.Uow.Execute(uow =>
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
                     var order = _vendrApi.GetCurrentOrder(store.Id)
@@ -76,7 +76,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                     _vendrApi.SaveOrder(order);
 
                     uow.Complete();
-                }
+                });
             }
             catch (ValidationException)
             {
@@ -95,7 +95,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
         {
             try
             {
-                using (var uow = _vendrApi.Uow.Create())
+                _vendrApi.Uow.Execute(uow =>
                 {
                     var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
                     var order = _vendrApi.GetCurrentOrder(store.Id)
@@ -105,7 +105,7 @@ namespace Vendr.RemadeByClive.Web.Controllers
                     _vendrApi.SaveOrder(order);
 
                     uow.Complete();
-                }
+                });
             }
             catch (ValidationException)
             {

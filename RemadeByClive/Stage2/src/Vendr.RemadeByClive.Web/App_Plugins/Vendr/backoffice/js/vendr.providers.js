@@ -7,6 +7,41 @@
         var provider = this;
 
         provider.bulkActions = [
+            ['$q', 'editorService', 'vendrOrderResource', function ($q, editorService, vendrOrderResource) {
+                return {
+                    name: 'Change Status',
+                    icon: 'icon-files',
+                    configure: function (items) {
+                        return $q(function (resolve, reject) {
+                            editorService.open({
+                                view: '/App_Plugins/Vendr/backoffice/views/dialogs/orderstatuspicker.html',
+                                size: 'small',
+                                config: {
+                                    storeId: items[0].storeId
+                                },
+                                submit: function (model2) {
+                                    editorService.close();
+                                    resolve({
+                                        orderStatusId: model2.id
+                                    });
+                                },
+                                close: function () {
+                                    editorService.close();
+                                    reject({
+                                        message: "Bulk action was canceled."
+                                    })
+                                }
+                            });
+                        });
+                    },
+                    itemAction: function (item, config) {
+                        return vendrOrderResource.changeOrderStatus(item.id, config.orderStatusId);
+                    },
+                    condition: function (ctx) {
+                        return ctx.entityType === 'Order';
+                    }
+                }
+            }],
             ['$q', 'editorService', 'vendrPrintTemplateResource', function ($q, editorService, vendrPrintTemplateResource) {
                 return {
                     name: 'Print',
@@ -23,7 +58,11 @@
                                     entities: items.map(itm => {
                                         return {
                                             id: itm.id,
-                                            name: itm.entityType === 'Order' ? '#' + itm.orderNumber : itm.name
+                                            name: itm.entityType === 'Cart'
+                                                ? '#' + itm.cartNumber
+                                                : itm.entityType === 'Order'
+                                                    ? '#' + itm.orderNumber
+                                                    : itm.name
                                         }
                                     }),
                                     category: items[0].entityType
@@ -41,7 +80,7 @@
                         });
                     },
                     condition: function (ctx) {
-                        if (ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
+                        if (ctx.entityType !== 'Cart' && ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
                             return false
                         return vendrPrintTemplateResource.getPrintTemplateCount(ctx.storeId, ctx.entityType).then(count => {
                             return count > 0;
@@ -62,11 +101,15 @@
                                 config: {
                                     storeId: items[0].storeId,
                                     entityType: items[0].entityType,
-                                    entityHasLanguageIsoCode: items[0].entityType === 'Order',
+                                    entityHasLanguageIsoCode: items[0].entityType === 'Cart' || items[0].entityType === 'Order',
                                     entities: items.map(itm => {
                                         return {
                                             id: itm.id,
-                                            name: itm.entityType === 'Order' ? '#' + itm.orderNumber : itm.name
+                                            name: itm.entityType === 'Cart' 
+                                                ? '#' + itm.cartNumber
+                                                : itm.entityType === 'Order' 
+                                                    ? '#' + itm.orderNumber 
+                                                    : itm.name
                                         }
                                     }),
                                     category: items[0].entityType
@@ -85,7 +128,7 @@
                         });
                     },
                     condition: function (ctx) {
-                        if (ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
+                        if (ctx.entityType !== 'Cart' && ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
                             return false
                         return vendrExportTemplateResource.getExportTemplateCount(ctx.storeId, ctx.entityType).then(count => {
                             return count > 0;
@@ -113,7 +156,7 @@
         provider.menuActions = [];
 
         provider.editorActions = [
-            ['$q', 'editorService', 'vendrOrderResource', function ($q, editorService, vendrOrderResource) {
+            ['$q', '$rootScope', 'editorService', 'vendrOrderResource', function ($q, $rootScope, editorService, vendrOrderResource) {
                 return {
                     name: 'Change Status',
                     action: function (model) {
@@ -126,13 +169,23 @@
                                 },
                                 submit: function (model2) {
                                     vendrOrderResource.changeOrderStatus(model.id, model2.id).then(function (order) {
+
                                         model.orderStatusId = order.orderStatusId;
                                         model.orderStatus = order.orderStatus;
+
                                         editorService.close();
+
+                                        $rootScope.$broadcast("vendrEntityChanged", {
+                                            entityType: model.entityType,
+                                            entityId: model.id,
+                                            storeId: model.storeId
+                                        });
+
                                         resolve({
                                             success: true,
                                             message: "Order status successfully changed to " + model2.name + "."
                                         })
+
                                     }).catch(function (e) {
                                         reject({
                                             message: "Unabled to change status to " + model2.name + ". Please check the error log for details."
@@ -162,14 +215,14 @@
                                 size: 'small',
                                 config: {
                                     storeId: model.storeId,
-                                    orderId: model.entityType === 'Order' ? model.id : model.orderId,
+                                    orderId: model.entityType === 'Cart' || model.entityType === 'Order' ? model.id : model.orderId,
                                     emailTemplateId: undefined,
                                     emailTemplateName: undefined
                                 },
                                 submit: function (model2) {
-                                    var action = model.entityType === 'Order'
+                                    var action = model.entityType === 'Cart'
                                         ? vendrEmailResource.sendOrderEmail
-                                        : vendrEmailResource.sendGiftCardEmail;
+                                        : vendrEmailResource["send" + model.entityType +"Email"];
                                     action(model2.emailTemplateId, model.id, model2.to, model2.languageIsoCode).then(function () {
                                         editorService.closeAll();
                                         resolve({
@@ -214,7 +267,7 @@
                         });
                     },
                     condition: function (ctx) {
-                        if (ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
+                        if (ctx.entityType !== 'Cart' && ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
                             return false
                         return vendrEmailTemplateResource.getEmailTemplateCount(ctx.storeId, ctx.entityType).then(count => {
                             return count > 0;
@@ -235,11 +288,15 @@
                                 config: {
                                     storeId: model.storeId,
                                     entityType: model.entityType,
-                                    entityHasLanguageIsoCode: model.entityType === 'Order',
+                                    entityHasLanguageIsoCode: model.entityType === 'Cart' || model.entityType === 'Order',
                                     entities: [
                                         {
                                             id: model.id,
-                                            name: model.entityType === 'Order' ? '#' + model.orderNumber : model.name
+                                            name: model.entityType === 'Cart' 
+                                                ? '#' + model.cartNumber 
+                                                : model.entityType === 'Order'
+                                                    ? '#' + model.orderNumber 
+                                                    : model.name
                                         }
                                     ],
                                     category: model.entityType
@@ -253,7 +310,7 @@
                         });
                     },
                     condition: function (ctx) {
-                        if (ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
+                        if (ctx.entityType !== 'Cart' && ctx.entityType !== 'Order' && ctx.entityType !== 'GiftCard' && ctx.entityType !== 'Discount')
                             return false
                         return vendrPrintTemplateResource.getPrintTemplateCount(ctx.storeId, ctx.entityType).then(count => {
                             return count > 0;

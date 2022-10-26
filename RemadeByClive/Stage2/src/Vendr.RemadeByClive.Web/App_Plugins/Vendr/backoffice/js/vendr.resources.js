@@ -14,6 +14,17 @@
                         itemsPerPage: itemsPerPage
                     })),
                     "Failed to get activity logs");
+            },
+
+            getActivityLogsByEntity: function (entityId, entityType, currentPage, itemsPerPage) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("activityLogApiBaseUrl", "GetActivityLogsByEntity", {
+                        entityId: entityId,
+                        entityType: entityType,
+                        currentPage: currentPage,
+                        itemsPerPage: itemsPerPage
+                    })),
+                    "Failed to get activity logs");
             }
 
         };
@@ -122,6 +133,89 @@
     };
 
     angular.module('vendr.resources').factory('vendrAnalyticsResource', vendrAnalyticsResource);
+
+}());
+(function () {
+
+    'use strict';
+
+    function vendrCartResource($http, umbRequestHelper, vendrRequestHelper) {
+
+        return {
+
+            searchCarts: function (storeId, opts) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "SearchCarts", angular.extend({}, { 
+                        storeId: storeId
+                    }, opts))),
+                    "Failed to search carts");
+            },
+
+            getCart: function (cartId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "GetCart", { 
+                        cartId: cartId
+                    })),
+                    "Failed to get cart");
+            },
+
+            getCartAdvancedFilters: function () {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "GetCartAdvancedFilters")),
+                    "Failed to get cart advanced filters");
+            },
+
+            createCart: function (storeId, languageIsoCode, currencyId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "CreateCart", {
+                        storeId: storeId,
+                        languageIsoCode: languageIsoCode,
+                        currencyId: currencyId
+                    })),
+                    "Failed to create a cart");
+            },
+
+            getCartListConfig: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "GetCartListConfig", {
+                        storeId: storeId
+                    })),
+                    "Failed to get cart list config");
+            },
+
+            getCartEditorConfig: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "GetCartEditorConfig", {
+                        storeId: storeId
+                    })),
+                    "Failed to get cart editor config");
+            },
+
+            calculateCart: function (cart) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "CalculateCart"), cart),
+                    "Failed to save cart");
+            },
+
+            saveCart: function (cart) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "SaveCart"), cart),
+                    "Failed to save cart");
+            },
+
+            deleteCart: function (cartId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.delete(vendrRequestHelper.getApiUrl("cartApiBaseUrl", "DeleteCart", {
+                        cartId: cartId
+                    })),
+                    "Failed to delete cart");
+            }
+
+        };
+
+    };
+
+    angular.module('vendr.resources').factory('vendrCartResource', vendrCartResource);
 
 }());
 (function () {
@@ -520,6 +614,17 @@
                         languageIsoCode: languageIsoCode
                     }),
                     "Failed to send gift card email");
+            },
+
+            sendDiscountEmail: function (emailTemlateId, discountId, to, languageIsoCode) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("emailApiBaseUrl", "SendDiscountEmail"), {
+                        emailTemlateId: emailTemlateId,
+                        discountId: discountId,
+                        to: to,
+                        languageIsoCode: languageIsoCode
+                    }),
+                    "Failed to send discount email");
             }
 
         };
@@ -842,6 +947,20 @@
                     "Failed to get order");
             },
 
+            getOrderAdvancedFilters: function () {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "GetOrderAdvancedFilters")),
+                    "Failed to get order advanced filters");
+            },
+
+            getOrderListConfig: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "GetOrderListConfig", {
+                        storeId: storeId
+                    })),
+                    "Failed to get order list config");
+            },
+
             getOrderEditorConfig: function (storeId) {
                 return umbRequestHelper.resourcePromise(
                     $http.get(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "GetOrderEditorConfig", {
@@ -929,7 +1048,7 @@
             saveOrder: function (order) {
                 return umbRequestHelper.resourcePromise(
                     $http.post(vendrRequestHelper.getApiUrl("orderApiBaseUrl", "SaveOrder"), order),
-                    "Failed to save order status");
+                    "Failed to save order");
             },
 
             deleteOrder: function (orderId) {
@@ -1139,13 +1258,55 @@
 
         return {
 
-            getStock: function (productReference, productVariantReference) {
+            getStock: function (storeId, productReference, productVariantReference) {
                 return umbRequestHelper.resourcePromise(
-                    $http.get(vendrRequestHelper.getApiUrl("productApiBaseUrl", "GetStock", { 
+                    $http.get(vendrRequestHelper.getApiUrl("productApiBaseUrl", "GetStock", {
+                        storeId: storeId,
                         productReference: productReference,
                         productVariantReference: productVariantReference
                     })),
                     "Failed to get stock");
+            },
+
+            getAllStock: function (storeId, productReferences) {
+                return umbRequestHelper.resourcePromise(
+                    $http.post(vendrRequestHelper.getApiUrl("productApiBaseUrl", "GetAllStock"), {
+                        storeId: storeId,
+                        productReferences: productReferences
+                    }),
+                    "Failed to get all stock");
+            },
+
+            searchProductSummaries: function (storeId, languageIsoCode, searchTerm, opts) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("productApiBaseUrl", "SearchProductSummaries", angular.extend({}, {
+                        storeId: storeId,
+                        languageIsoCode: languageIsoCode,
+                        searchTerm: searchTerm
+                    }, opts))),
+                    "Failed to search product summaries");
+            },
+
+            getProductVariantAttributes: function (storeId, productReference, languageIsoCode) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("productApiBaseUrl", "GetProductVariantAttributes", {
+                        storeId: storeId,
+                        productReference: productReference,
+                        languageIsoCode: languageIsoCode
+                    })),
+                    "Failed to get product variant attributes");
+            },
+
+            searchProductVariantSummaries: function (storeId, productReference, languageIsoCode, searchTerm, attributes, opts) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("productApiBaseUrl", "SearchProductVariantSummaries", angular.extend({}, {
+                        storeId: storeId,
+                        productReference: productReference,
+                        languageIsoCode: languageIsoCode,
+                        searchTerm: searchTerm,
+                        "attributes[]": attributes
+                    }, opts))),
+                    "Failed to search product variant summaries");
             }
 
         };
@@ -1418,6 +1579,47 @@
 
     'use strict';
 
+    function vendrTagResource($http, umbRequestHelper, vendrRequestHelper) {
+
+        return {
+
+            getTags: function (storeId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("tagApiBaseUrl", "GetTags", { 
+                        storeId: storeId 
+                    })),
+                    "Failed to get tags");
+            },
+
+            getTagsByEntityType: function (storeId, entityType) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("tagApiBaseUrl", "GetTagsByEntityType", {
+                        storeId: storeId,
+                        entityType: entityType
+                    })),
+                    "Failed to get tags by entity type");
+            },
+
+            getEnityTags: function (storeId, entityId) {
+                return umbRequestHelper.resourcePromise(
+                    $http.get(vendrRequestHelper.getApiUrl("tagApiBaseUrl", "GetEnityTags", {
+                        storeId: storeId,
+                        entityId: entityId
+                    })),
+                    "Failed to get entity tags");
+            }
+
+        };
+
+    }
+
+    angular.module('vendr.resources').factory('vendrTagResource', vendrTagResource);
+
+}());
+(function () {
+
+    'use strict';
+
     function vendrTaxResource($http, umbRequestHelper, vendrRequestHelper) {
 
         return {
@@ -1481,6 +1683,12 @@
                         type: type
                     })),
                     "Failed to get enum options");
+            },
+
+            generateGuid : function () {
+                return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+                );
             }
 
         };

@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:7212",
-      "sslPort": 44340
+      "applicationUrl": "http://localhost:6012",
+      "sslPort": 44382
     }
   },
   "profiles": {
@@ -16,11 +16,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Umbraco.Web.UI.NetCore": {
+    "Umbraco.Web.UI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:44340;http://localhost:7212",
+      "applicationUrl": "https://localhost:44382;http://localhost:6012",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }      
